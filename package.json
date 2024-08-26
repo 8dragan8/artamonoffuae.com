@@ -1,5 +1,4 @@
 {
-  "name": "",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,8 +9,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.14.5",
     "@astrojs/check": "^0.9.3",
+    "astro": "^4.14.5",
     "typescript": "^5.5.4"
-  }
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.24.0",
+    "@types/eslint": "^9",
+    "eslint": "^9.8.0",
+    "eslint-plugin-astro": "^1.2.3",
+    "sass": "^1.77.8"
+  },
+  "packageManager": "yarn@4.4.1"
 }
