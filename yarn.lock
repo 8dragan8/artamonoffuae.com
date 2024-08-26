@@ -15,7 +15,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@antfu/eslint-config@npm:^2.24.0":
+"@antfu/eslint-config@npm:^2.27.2":
   version: 2.27.2
   resolution: "@antfu/eslint-config@npm:2.27.2"
   dependencies:
@@ -1413,7 +1413,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:^9, @types/eslint@npm:^9.6.0":
+"@types/eslint@npm:^9.6.0, @types/eslint@npm:^9.6.1":
   version: 9.6.1
   resolution: "@types/eslint@npm:9.6.1"
   dependencies:
@@ -3206,7 +3206,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.8.0":
+"eslint@npm:^9.9.1":
   version: 9.9.1
   resolution: "eslint@npm:9.9.1"
   dependencies:
@@ -6204,11 +6204,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@antfu/eslint-config": "npm:^2.24.0"
+    "@antfu/eslint-config": "npm:^2.27.2"
     "@astrojs/check": "npm:^0.9.3"
-    "@types/eslint": "npm:^9"
+    "@types/eslint": "npm:^9.6.1"
     astro: "npm:^4.14.5"
-    eslint: "npm:^9.8.0"
+    eslint: "npm:^9.9.1"
     eslint-plugin-astro: "npm:^1.2.3"
     sass: "npm:^1.77.8"
     typescript: "npm:^5.5.4"
