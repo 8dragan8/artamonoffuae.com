@@ -1,0 +1,10 @@
+---
+const { bgimage, class: className } = Astro.props
+const backgroundUrlProp = `url("${bgimage}")`
+---
+
+<section class={'h-full bg-center bg-no-repeat bg-cover relative ' + className}>
+  <slot />
+</section>
+
+<style lang='scss' define:vars={{ backgroundUrlProp }}></style>
