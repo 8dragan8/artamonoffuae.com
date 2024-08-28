@@ -5,40 +5,40 @@ import Logo from '../components/logos/Logo.astro'
 import Section from '../components/logos/Section.astro'
 ---
 
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
   <body>
-    <Section class='bg-hero-image' bgimage={backgroundUrl.src}>
-      <div class='relative gap-3 top-10 grid grid-cols-4 overflow-hidden grid-rows-[1.5rem_4rem_16rem_4rem_1.5rem_1fr] h-[calc(100vh-2.5rem)]'>
-        <div class='col-span-4 bg-black/60'></div>
-        <div class='test-grad from-left col-span-2 bg-black/60'></div>
-        <div class='relative col-start-1 col-span-4 bg-black/60 flex justify-center py-4'>
+    <Section class="bg-hero-image" bgimage={backgroundUrl}>
+      <div class="relative gap-3 top-10 grid grid-cols-4 overflow-hidden grid-rows-[1.5rem_4rem_16rem_4rem_1.5rem_1fr] h-[calc(100vh-2.5rem)]">
+        <div class="col-span-4 bg-black/60"></div>
+        <div class="test-grad from-left col-span-2 bg-black/60"></div>
+        <div class="relative col-start-1 col-span-4 bg-black/60 flex justify-center py-4">
           <Logo />
         </div>
-        <div class='test-grad from-right col-start-3 col-span-2 bg-black/60'></div>
-        <div class='col-span-4 bg-black/60'></div>
-        <div class='col-span-4 flex justify-center items-end'>
+        <div class="test-grad from-right col-start-3 col-span-2 bg-black/60"></div>
+        <div class="col-span-4 bg-black/60"></div>
+        <div class="col-span-4 flex justify-center items-end">
           <div
-            class='animate-bounce bg-white dark:bg-slate-800 p-2 w-10 h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center'
+            class="animate-bounce bg-white dark:bg-slate-800 p-2 w-10 h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center"
           >
-            <svg class='w-6 h-6 text-violet-500' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' stroke='currentColor'>
-              <path d='M19 14l-7 7m0 0l-7-7m7 7V3'></path>
+            <svg class="w-6 h-6 text-violet-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
           </div>
         </div>
       </div>
     </Section>
-    <Section class='bg-section-image' bgimage={backgroundUrl2.src} />
+    <Section class="bg-section-image" bgimage={backgroundUrl2} />
   </body>
 </html>
 
-<style lang='scss' is:global>
+<style lang="scss" is:global>
   body,
   html {
     height: 100%;
