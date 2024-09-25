@@ -283,5 +283,35 @@
         ]
       }
     ]
+  },
+  "thankYou": [
+    "At Artamonoff project management company, we acknowledge that the invaluable essence of time - viewing it as the most precious commodity in the world.",
+    "Hence, we genuinely appreciate and honor our clients' time",
+    "Thank you for investing your time to explore our brochure, and we are hopeful that this signifies the intention of a collaborative and mutually beneficial partnership in the near future.",
+    "Once again, we express our gratitude for your time and enthusiastic interest."
+  ],
+  "contact": {
+    "title": "Reach out",
+    "subtitle": "Navigating Complexity, delivering simplicity",
+    "description": "Your vision, our expertise Empowering future",
+    "email": "info@artamonoffuae.com",
+    "phones": [
+      {
+        "title": "UAE",
+        "value": "+971 55 588 6234"
+      },
+      {
+        "title": "UAE",
+        "value": "+971 52 840 1454"
+      },
+      {
+        "title": "Serbia",
+        "value": "+381 61 312 0062"
+      }
+    ],
+    "address": "United Arab Emirates, Dubai",
+
+    "www": "www.artamonoffuae.com"
   }
+
 }
