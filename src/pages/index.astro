@@ -1,8 +1,15 @@
 ---
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
 import backgroundUrl from '../assets/1.jpg'
 import backgroundUrl2 from '../assets/2.jpg'
+import backgroundUrl3 from '../assets/3.jpg'
+// import backgroundUrl4 from '../assets/4.jpg'
 import Logo from '../components/logos/Logo.astro'
 import Section from '../components/logos/Section.astro'
+
+
+import config from '../content/main.json'
 ---
 
 <html lang="en">
@@ -23,67 +30,81 @@ import Section from '../components/logos/Section.astro'
         </div>
         <div class="test-grad from-right col-start-3 col-span-2 bg-black/60"></div>
         <div class="col-span-4 bg-black/60"></div>
-        <div class="col-span-4 flex justify-center items-end">
+        <div class="col-span-4 flex justify-center items-end pb-4">
           <div
             class="animate-bounce bg-white dark:bg-slate-800 p-2 w-10 h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center"
           >
-            <svg class="w-6 h-6 text-violet-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+            <svg class="w-6 h-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
           </div>
         </div>
       </div>
     </Section>
-    <Section class="bg-section-image" bgimage={backgroundUrl2} />
+    <section class="grid grid-cols-2 gap-6 p-12 relative h-full bg-slate-500 place-content-center">
+      <div class="absolute top-0 right-1/2 w-1/2 h-full">
+        <Image src={backgroundUrl2} alt="A description of my image." class="w-full h-full object-cover object-bottom" />
+      </div>
+      <div class="relative flex items-center justify-center z-[1]">
+        <h1 class="text-6xl font-bold text-center z-[1]">{config.section1.title}</h1>
+      </div>
+
+      <div class="grid grid-cols-2 grid-rows-2 gap-6">
+
+        {config.section1.items.map(item => (
+          <article class="flex flex-col gap-3 items-center">
+            {item.icon && <Icon name={`Icons_${item.icon}`} />}
+            <h2 class="text-2xl font-bold">{item.title}</h2>
+            <p class="text-base text-balance">{item.keys[0]}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+    <section class="grid grid-cols-2 gap-6 p-12 relative h-full bg-slate-200 place-content-center">
+      <div class="absolute top-0 left-1/2 w-1/2 h-full">
+        <Image src={backgroundUrl3} alt="A description of my image." class="w-full h-full object-cover object-bottom" />
+      </div>
+      <div class="relative flex flex-col flex-wrap gap-2 bg-black/60 text-white">
+
+        {config.section2.items.map((item, i) => (
+          <article class="w-[50%] flex flex-col gap-3 items-center">
+            <h2 class="text-xl font-bold"><span>{i + 1}</span>. {item.title}</h2>
+            <ul>
+            {item.keys.map(key => <li class="text-base text-balance list-disc list-outside ml-6">{key}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+      <div class="relative flex items-center justify-center z-[1]">
+        <h1 class="text-6xl font-bold text-center z-[1]">{config.section2.title}</h1>
+      </div>    </section>
+    <section class="bg-section-image p-12 relative h-full">
+      <h1 class="text-3xl font-bold mb-6 text-center">{config.section3.title}</h1>
+      <div class="grid grid-cols-2 gap-6  max-h-full">
+
+        {config.section3.items.map(item => (
+          <article class="flex flex-col gap-3 items-center">
+            {item.icon && <Icon name={`Icons_${item.icon}`} />}
+            <ul>
+            {item.keys.map(key => <li class="text-base text-balance list-disc list-outside ml-6">{key}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
   </body>
-</html>
+  </html>
 
 <style lang="scss" is:global>
-  body,
-  html {
-    height: 100%;
-  }
+  @import '@styles/global.scss';
+</style>
 
-  .test-grad {
-    background: rgba(0, 0, 0, 0.5);
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0.6) calc(100% / 3 - 1rem),
-      rgba(0, 0, 0, 0) calc(100% / 3 - 1rem),
-      rgba(0, 0, 0, 0) calc(100% / 3 + 1rem),
-      rgba(0, 0, 0, 0.6) calc(100% / 3 + 1rem),
-      rgba(0, 0, 0, 0.6) calc(100% / 3 * 2 - 1rem),
-      rgba(0, 0, 0, 0) calc(100% / 3 * 2 - 1rem),
-      rgba(0, 0, 0, 0) calc(100% / 3 * 2 + 1rem),
-      rgba(0, 0, 0, 0.6) calc(100% / 3 * 2 + 1rem),
-      rgba(0, 0, 0, 0.6) 100%
-    );
-  }
-  .from-left {
-    animation: in-fromLeft 0.7s ease-in-out forwards;
-  }
-
-  @keyframes in-fromLeft {
-    from {
-      transform: translateX(-100%) skew(0);
+<style lang="scss">
+     [data-icon] {
+      $icon-size: 3.76em;
+      position: relative;
+      width: $icon-size;
+      height: $icon-size;
+      color: red;
     }
-
-    to {
-      transform: translateX(0) skew(-45deg);
-    }
-  }
-  .from-right {
-    animation: in-from-right 0.7s ease-in-out forwards;
-  }
-
-  @keyframes in-from-right {
-    from {
-      transform: translateX(100%) skew(0);
-    }
-
-    to {
-      transform: translateX(0) skew(-45deg);
-    }
-  }
 </style>

@@ -5,17 +5,20 @@
     "items": [
       {
         "title": "WHO WE ARE",
+        "icon": "MagnifyingGlass",
         "keys": ["We are a Dynamic Team of Professionals in Various Business Fields, Driven by a Shared Passion for Delivering Exceptional Results. Our Diverse Skill Set, Coupled With a Client-Centric Approach, Sets Us Apart in the Industry. Committed to Integrity, Collaboration, and Continuous Improvement, we Thrive on Navigating the Complexities of Projects, From Inception to Successful Completion."
         ]
       },
       {
         "title": "OUR VISION",
+        "icon": "Vision",
         "keys": [
           "To be Recognized as a Leading Force in the Realm of Project Management Services, Synonymous with Excellence, Innovation, and Client Success. Our Vision is to Continually Advance Industry Standards, Cultivate a Dynamic and Inclusive Work Culture, and be the go-to Partner for Organizations Seeking Unparalleled Expertise in Achieving Their Project Goals."
         ]
       },
       {
         "title": "OUR MISSION",
+        "icon": "Mission",
         "keys": [
           "To Empower Organizations Through Expert Project Management, Ensuring the Successful Delivery of Projects on Time, Within Budget, and Exceeding Expectations. We are Committed to Fostering Collaborative Partnerships, Driving Efficiency, and Achieving Client Satisfaction by Consistently Delivering High-Quality Solutions."
         ]
@@ -108,12 +111,14 @@
     "description": "Our team of  experts offers you a comprehensive assistance in establishing and registering a new business entity and much more.",
     "items": [
       {
+        "icon": "Vision",
         "keys": [
           "Virtual Office",
           "Physical Office"
         ]
       },
       {
+        "icon": "Vision",
         "keys": [
           "Establishment Card",
           "Entry Permit",
@@ -124,6 +129,7 @@
         ]
       },
       {
+        "icon": "Vision",
         "keys": [
           "Compliance (UBO & ESR Assessment)",
           "VAT Registration",
@@ -135,6 +141,7 @@
         ]
       },
       {
+        "icon": "Vision",
         "keys": [
           "Partner Visa",
           "New Family Visa",
@@ -145,6 +152,7 @@
         ]
       },
       {
+        "icon": "Vision",
         "keys": [
           "Renew Trade License",
           "Trade Mark Registration",

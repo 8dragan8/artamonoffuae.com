@@ -5,8 +5,14 @@
       {
         "name": "@astrojs/ts-plugin"
       }
-    ]
-
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utl/*": ["src/utils/*"]
+    }
   },
   "exclude": [
     "node_modules",

@@ -1,0 +1,41 @@
+body,
+html {
+    height: 100%;
+}
+
+.test-grad {
+    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(90deg, rgba( 0, 0, 0, 0.6) 0%, rgba( 0, 0, 0, 0.6) calc( 100% / 3 - 1rem) , rgba( 0, 0, 0, 0) calc( 100% / 3 - 1rem) , rgba( 0, 0, 0, 0) calc( 100% / 3 + 1rem) , rgba( 0, 0, 0, 0.6) calc( 100% / 3 + 1rem) , rgba( 0, 0, 0, 0.6) calc( 100% / 3 * 2 - 1rem) , rgba( 0, 0, 0, 0) calc( 100% / 3 * 2 - 1rem) , rgba( 0, 0, 0, 0) calc( 100% / 3 * 2 + 1rem) , rgba( 0, 0, 0, 0.6) calc( 100% / 3 * 2 + 1rem) , rgba( 0, 0, 0, 0.6) 100%);
+}
+
+.from-left {
+    animation: in-fromLeft 0.7s ease-in-out forwards;
+}
+
+@keyframes in-fromLeft {
+
+from {
+    transform: translateX(-100%) skew( 0);
+}
+
+to {
+    transform: translateX(0) skew( -45deg);
+}
+
+}
+
+.from-right {
+    animation: in-from-right 0.7s ease-in-out forwards;
+}
+
+@keyframes in-from-right {
+
+from {
+    transform: translateX(100%) skew( 0);
+}
+
+to {
+    transform: translateX(0) skew( -45deg);
+}
+
+}
