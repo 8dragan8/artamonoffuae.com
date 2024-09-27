@@ -43,11 +43,11 @@ import config from '../content/main.json'
     </Section>
     <section class="grid grid-cols-2 gap-6 p-12 relative h-full bg-slate-100 place-content-center">
       <div class="absolute top-0 right-1/2 w-1/2 h-full">
-        <Image src={backgroundUrl2} alt="A description of my image." class="w-full h-full object-cover object-bottom" />
+        <Image src={backgroundUrl2} alt="A description of my image." class="w-full h-full object-cover object-bottom opacity-60 hover:opacity-100 transition-opacity duration-700" />
       </div>
-      <div class="relative flex flex-col items-center justify-center">
+      <div class="relative flex flex-col items-center justify-center pointer-events-none">
         <h1 class="text-6xl font-bold text-center">{config.section1.title}</h1>
-        <p class="max-w-[40ch] italic mt-8 text-white drop-shadow-2xl text-4xl font-thin text-center"><q>{config.section1.subtitle}</q></p>
+        <p class="max-w-[40ch] italic mt-8  drop-shadow-2xl text-4xl font-thin text-center"><q>{config.section1.subtitle}</q></p>
       </div>
 
       <div class="grid grid-cols-2 grid-rows-2 gap-6">
@@ -63,7 +63,7 @@ import config from '../content/main.json'
     </section>
     <section class="grid grid-cols-2 gap-6 p-12 relative h-full bg-slate-100 place-content-center">
       <div class="absolute top-0 left-1/2 w-1/2 h-full">
-        <Image src={backgroundUrl3} alt="A description of my image." class="w-full h-full object-cover object-center" />
+        <Image src={backgroundUrl3} alt="A description of my image." class="w-full h-full object-cover object-center opacity-60 hover:opacity-100 transition-opacity duration-700" />
       </div>
       <ul style="columns: 2;">
 
@@ -76,14 +76,14 @@ import config from '../content/main.json'
           </li>
         ))}
       </ul>
-      <div class="relative flex items-center justify-center z-[1]">
-        <h1 class="text-6xl font-bold text-center z-[1]">{config.section2.title}</h1>
+      <div class="relative flex items-center justify-center pointer-events-none">
+        <h1 class="text-6xl font-bold text-center">{config.section2.title}</h1>
       </div>    </section>
     <section class="grid grid-cols-2 gap-6 p-12 relative h-full bg-slate-100 place-content-center">
       <div class="absolute top-0 right-1/2 w-1/2 h-full">
-        <Image src={backgroundUrl4} alt="A description of my image." class="w-full h-full object-cover object-top" />
+        <Image src={backgroundUrl4} alt="A description of my image." class="w-full h-full object-cover object-top opacity-60 hover:opacity-100 transition-opacity duration-700" />
       </div>
-      <div class="relative flex flex-col items-center justify-center">
+      <div class="relative flex flex-col items-center justify-center pointer-events-none">
         <h1 class="text-6xl font-bold text-center">{config.section3.subtitle}</h1>
         <p class="max-w-[40ch] italic mt-8 text-slate-700 mix-blend-multiply drop-shadow-2xl text-4xl font-thin text-center"><q>{config.section3.description}</q></p>
       </div>
