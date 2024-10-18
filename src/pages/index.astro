@@ -1,9 +1,11 @@
 ---
 import Hero from '@components/Hero/index.astro'
+import Section from '@components/Section/index.astro'
 import { getImage } from 'astro:assets'
 import backgroundUrl from '../assets/1.jpg'
 
-// import config from '../content/main.json'
+
+import config from '../content/main.json'
 // eslint-disable-next-line antfu/no-top-level-await
 const optimizedButtonSpritesheet = await getImage({ src: backgroundUrl, format: 'webp' })
 ---
@@ -20,6 +22,7 @@ const optimizedButtonSpritesheet = await getImage({ src: backgroundUrl, format: 
     <section style={`--background-url-prop: url(${optimizedButtonSpritesheet.src});`}>
       <Hero />
     </section>
+    <Section content={config.section1} />
   </body>
 </html>
 
@@ -28,5 +31,5 @@ const optimizedButtonSpritesheet = await getImage({ src: backgroundUrl, format: 
 </style>
 
 <style lang="scss">
-  @use '@styles/main.scss';
+  @forward '@styles/main.scss';
 </style>

@@ -1,11 +1,11 @@
 .hero-container {
     position: relative;
-    top: 2.5rem;
 
     display: grid;
     overflow: hidden;
 
-    height: calc(100vh - 2.5rem);
+    height: 100%;
+    padding-top: 2.5rem;
 
     gap: .75rem;
     grid-template-columns: repeat(4, 1fr);

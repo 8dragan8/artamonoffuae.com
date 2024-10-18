@@ -1,1 +1,14 @@
 @use '@styles/_reset.scss';
+
+.u-container {
+    max-width: var(--grid-max-width);
+
+    padding-inline: var(--grid-gutter);
+    margin-inline: auto;
+}
+
+.u-grid {
+    display: grid;
+
+    gap: var(--grid-gutter);
+}

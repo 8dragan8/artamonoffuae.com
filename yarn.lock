@@ -2492,6 +2492,7 @@ __metadata:
     sass: "npm:^1.80.1"
     tailwindcss: "npm:^3.4.14"
     typescript: "npm:^5.6.3"
+    utopia-core-scss: "npm:^1.1.0"
   languageName: unknown
   linkType: soft
 
@@ -8446,6 +8447,13 @@ __metadata:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 10c0/41a5bdd214df2f6c3ecf8622745e4a366c4adced864bc3c833739791aeeeb1838119af7daed4ba36428114b5c67dcda034a79c882e97e43c03e66a4dd7389942
+  languageName: node
+  linkType: hard
+
+"utopia-core-scss@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "utopia-core-scss@npm:1.1.0"
+  checksum: 10c0/482f27764d8062bac7f38ceb1f9f4773845e53c5ad671caaa105bab1a6fcda337b6ee8a77266d2ba86bc0357ea1eed97c284f5773b2868045a57d1b90b59a221
   languageName: node
   linkType: hard
 

@@ -1,17 +1,40 @@
 ---
-import type { ImageMetadata } from 'astro'
+import type { Section1 } from '@content/types.ts'
+import { getImage } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+import section1Bg from '../../assets/2.jpg'
+
 
 type Props = {
-  bgimage: ImageMetadata
-  class?: string
+  content: Section1
 }
 
-const { bgimage, class: className } = Astro.props
-const backgroundUrlProp = `url("${bgimage.src}")`
+const { content } = Astro.props
+
+// eslint-disable-next-line antfu/no-top-level-await
+const backgroundUrlProp = await getImage({ src: section1Bg, format: 'webp' })
+
 ---
 
-<section class={`h-full bg-center bg-no-repeat bg-cover relative ${className}`}>
-  <slot />
+<section>
+  <div class="section-title" style={`--backgroundUrlProp: url(${backgroundUrlProp.src});`}>
+
+      <h1 class="">{content.title}</h1>
+      <p class="max-w-[40ch] italic mt-8  drop-shadow-2xl text-4xl font-thin text-center"><q>{content.subtitle}</q></p>
+  </div>
+
+  <div class="section-content">
+
+    {content.items.map(item => (
+      <article>
+       {item.icon && <Icon name={`Icons_${item.icon}`} />}
+        <h5>{item.title}</h5>
+        <p>{item.keys[0]}</p>
+      </article>
+    ))}
+  </div>
 </section>
 
-<style lang="scss" define:vars={{ backgroundUrlProp }}></style>
+<style lang="scss">
+  @forward './main.scss';
+</style>

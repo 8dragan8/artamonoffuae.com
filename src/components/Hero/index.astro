@@ -1,5 +1,6 @@
 ---
-import Logo from '@components/logos/Logo.astro';
+import Logo from '@components/logos/Logo.astro'
+// import './main.scss';
 ---
 
 <div class="hero-container">
@@ -17,8 +18,8 @@ import Logo from '@components/logos/Logo.astro';
         </svg>
       </div>
     </div>
-  </div>
+</div>
 
 <style lang="scss">
-  @use './main.scss';
+    @forward './main.scss';
 </style>
