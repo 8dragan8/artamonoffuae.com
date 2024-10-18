@@ -1,0 +1,29 @@
+---
+import type { ImageMetadata } from 'astro'
+import { Image } from 'astro:assets'
+
+type Props = {
+  imagePath: string
+  title: string
+  subtitle: string
+}
+
+const path = '/src/assets/sectionImages/'
+
+const { imagePath, title, subtitle } = Astro.props
+const images = import.meta.glob<{ default: ImageMetadata }>('@assets/sectionImages/*.{jpeg,jpg,png,gif}')
+if (!images[path + imagePath])
+throw new Error(`"${path + imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
+---
+
+<div class="section-title">
+    <Image src={images[path + imagePath]()} alt={`${title}image`} />
+    <div class="section-title-text">
+      <h1>{title}</h1>
+      <p><q>{subtitle}</q></p>
+    </div>
+</div>
+
+<style lang="scss">
+    @forward './main.scss';
+  </style>

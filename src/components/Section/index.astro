@@ -1,38 +1,11 @@
 ---
-import type { Section1 } from '@content/types.ts'
-import { getImage } from 'astro:assets'
-import { Icon } from 'astro-icon/components'
-import section1Bg from '../../assets/2.jpg'
-
-
-type Props = {
-  content: Section1
-}
-
-const { content } = Astro.props
-
-// eslint-disable-next-line antfu/no-top-level-await
-const backgroundUrlProp = await getImage({ src: section1Bg, format: 'webp' })
 
 ---
 
-<section>
-  <div class="section-title" style={`--backgroundUrlProp: url(${backgroundUrlProp.src});`}>
-
-      <h1 class="">{content.title}</h1>
-      <p class="max-w-[40ch] italic mt-8  drop-shadow-2xl text-4xl font-thin text-center"><q>{content.subtitle}</q></p>
-  </div>
-
-  <div class="section-content">
-
-    {content.items.map(item => (
-      <article>
-       {item.icon && <Icon name={`Icons_${item.icon}`} />}
-        <h5>{item.title}</h5>
-        <p>{item.keys[0]}</p>
-      </article>
-    ))}
-  </div>
+<section class="u-grid u-grid-columns">
+  <slot name="left-title" />
+   <slot />
+   <slot name="right-title" />
 </section>
 
 <style lang="scss">
