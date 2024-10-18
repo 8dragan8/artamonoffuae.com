@@ -1,19 +1,12 @@
 section {
     position: relative;
 
-    // display: flex;
+    display: grid;
 
     min-height: 100svh;
 
-    .section-content {
-        display: grid;
+    // gap: var(--grid-gutter);
 
-        min-height: 100svh;
-        padding: var(--space-l);
-
-        grid-column: 7 / 13;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: var(--space-l-xl);
-    }
+    grid-template-columns: [main-start] 2rem [content-start left-content-start] 1fr [left-content-end] 2rem [center-line] 2rem [right-content-start] 1fr [right-content-end content-end] 2rem [main-end];
+    grid-template-rows: [main-start] 2rem [content-start] 1fr [content-end] 2rem [main-end];
 }

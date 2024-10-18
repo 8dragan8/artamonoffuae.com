@@ -1,0 +1,21 @@
+---
+import type { Section1Item } from '@content/types'
+import ArticleWithIcon from '@components/ArticleWithIcon/index.astro'
+
+type Props = {
+  content: Section1Item[]
+}
+
+const { content } = Astro.props
+
+---
+
+  <div class="content-wrapper">
+  {content.map(item => (
+    <ArticleWithIcon content={item} />
+  ))}
+</div>
+
+<style lang="scss">
+    @forward './main.scss';
+  </style>

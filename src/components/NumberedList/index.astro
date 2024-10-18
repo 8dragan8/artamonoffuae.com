@@ -1,20 +1,24 @@
 ---
-import type { Section1Item } from '@content/types'
-import { Icon } from 'astro-icon/components'
+import type { Section2Item } from '@content/types'
 
 type Props = {
-  content: Section1Item
+  content: Section2Item[]
 }
 
 const { content } = Astro.props
 
 ---
 
-<article>
-    {content.icon && <Icon name={`Icons_${content.icon}`} />}
-     <h5>{content.title}</h5>
-     <p>{content.keys[0]}</p>
-</article>
+  <div class="content-wrapper numbered-list">
+  {content.map((item, i) => (
+    <article class="w-11/12 m-6">
+      <h6><span>{i + 1}</span>. {item.title}</h6>
+      <ul>
+      {item.keys.map(key => <li class="text-base text-balance list-disc list-outside ml-6">{key}</li>)}
+      </ul>
+    </article>
+  ))}
+</div>
 
 <style lang="scss">
     @forward './main.scss';

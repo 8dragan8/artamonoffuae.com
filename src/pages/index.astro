@@ -1,6 +1,6 @@
 ---
 import heroImage from '@assets/hero.jpg'
-import ArticleWithIcon from '@components/ArticleWithIcon/index.astro'
+import ArticlesLayout from '@components/ArticlesLayout/index.astro'
 import Hero from '@components/Hero/index.astro'
 import NumberedList from '@components/NumberedList/index.astro'
 import Section from '@components/Section/index.astro'
@@ -8,6 +8,7 @@ import SectionTitle from '@components/SectionTitle/index.astro'
 import { getImage } from 'astro:assets'
 
 import config from '../content/main.json'
+
 // eslint-disable-next-line antfu/no-top-level-await
 const optimisedHeroImage = await getImage({ src: heroImage, format: 'webp' })
 ---
@@ -24,18 +25,26 @@ const optimisedHeroImage = await getImage({ src: heroImage, format: 'webp' })
     <section style={`--background-url-prop: url(${optimisedHeroImage.src});`}>
       <Hero />
     </section>
-    <Section>
-      <SectionTitle slot="left-title" title={config.section1.title} subtitle={config.section1.subtitle} imagePath="2.jpg" />
-      {config.section1.items.map(item => <ArticleWithIcon content={item} />)}
-    </Section>
-    <Section>
-      <SectionTitle slot="right-title" title={config.section2.title} subtitle={config.section2.subtitle} imagePath="3.jpg" />
-      {config.section2.items.map(item => <NumberedList content={item} />)}
-    </Section>
-    <Section>
-      <SectionTitle slot="left-title" title={config.section3.title} subtitle={config.section3.subtitle} imagePath="4.jpg" />
-      {config.section3.items.map(item => <ArticleWithIcon content={item} />)}
-    </Section>
+    {
+      Object.keys(config).map((key, i) => {
+        // @ts-expect-error
+        const section = config[key]
+
+        return (
+          <Section>
+            <SectionTitle
+              slot={i % 2 !== 0 ? 'right-title' : 'left-title'}
+              title={section.title}
+              subtitle={section.subtitle}
+              imagePath={`${i + 2}.jpg`}
+            />
+                { key === 'section1' && <ArticlesLayout content={section.items} />}
+                { key === 'section2' && <NumberedList content={section.items} /> }
+                { [3, 4, 5, 6, 7].filter(x => x === (i + 1)).map(() => <div class="content-wrapper">{key}</div>) }
+          </Section>
+        )
+      })
+    }
   </body>
 </html>
 

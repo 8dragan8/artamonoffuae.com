@@ -21,11 +21,11 @@
     grid-row: 1 / span 3;
 
     &:first-child {
-        grid-column: main-start / span 7;
+        grid-column: main-start / center-line;
     }
 
     &:last-child {
-        grid-column: span 7 / main-end;
+        grid-column: center-line / main-end;
     }
 
     img {

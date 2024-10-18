@@ -16,3 +16,15 @@
 .u-grid-columns {
     grid-template-columns: [main-start] minmax(var( --grid-gutter) , 1fr) [content-start] repeat( var( --grid-columns) , 1fr) [content-end] minmax( var( --grid-gutter) , 1fr) [main-end];
 }
+
+.content-wrapper {
+    grid-row: content-start / content-end;
+
+    &:first-child {
+        grid-column: left-content-start / left-content-end;
+    }
+
+    &:last-child {
+        grid-column: right-content-start / right-content-end;
+    }
+}
