@@ -10,10 +10,8 @@ const { content } = Astro.props
 
 ---
 
-  <div class="content-wrapper">
-  {content.map(item => (
-    <ArticleWithIcon content={item} />
-  ))}
+<div class="articles-wrapper content-wrapper">
+  {content.map(item => <ArticleWithIcon content={item} />)}
 </div>
 
 <style lang="scss">
