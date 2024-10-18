@@ -1,5 +1,9 @@
 @use '@styles/_reset.scss';
 
+html {
+ font-family: var(--sans-font);
+}
+
 .u-container {
     max-width: var(--grid-max-width);
 

@@ -4,11 +4,13 @@ import ArticlesLayout from '@components/ArticlesLayout/index.astro'
 import Hero from '@components/Hero/index.astro'
 import NumberedList from '@components/NumberedList/index.astro'
 import Section from '@components/Section/index.astro'
+import Section3Content from '@components/Section3Content/index.astro'
 import SectionTitle from '@components/SectionTitle/index.astro'
 import { getImage } from 'astro:assets'
-
 import config from '../content/main.json'
-
+import '@fontsource-variable/montserrat'
+// Supports weights 400-900
+import '@fontsource-variable/playfair-display'
 // eslint-disable-next-line antfu/no-top-level-await
 const optimisedHeroImage = await getImage({ src: heroImage, format: 'webp' })
 ---
@@ -39,7 +41,10 @@ const optimisedHeroImage = await getImage({ src: heroImage, format: 'webp' })
             />
             { key === 'section1' && <ArticlesLayout content={section.items} />}
             { key === 'section2' && <NumberedList content={section.items} /> }
-            { [3, 4, 5, 6, 7].filter(x => x === (i + 1)).map(() => <div class="content-wrapper">{key}</div>) }
+            { key === 'section3' && <Section3Content content={section.items} description={section.description} /> }
+            { key === 'section4' && <NumberedList content={section.items} /> }
+            { key === 'section5' && <Section3Content content={section.items} description={section.description} /> }
+            { [6, 7].filter(x => x === (i + 1)).map(() => <div class="content-wrapper">{key}</div>) }
           </Section>
         )
       })

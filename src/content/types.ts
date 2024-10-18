@@ -1,9 +1,9 @@
 export interface ContentType {
-  section1: Section1
-  section2: Section2
-  section3: Section3
-  section4: Section4
-  section5: Section5
+  section1: Section
+  section2: Section
+  section3: Section
+  section4: Section
+  section5: Section
   thankYou: string[]
   faq: FAQ
   contact: Contact
@@ -30,12 +30,23 @@ export interface FAQ {
   content: string
 }
 
+export interface Section {
+  title: string
+  subtitle: string
+  description: string
+  items: SectionItem[]
+}
 export interface Section1 {
   title: string
   subtitle: string
   items: Section1Item[]
 }
 
+export interface SectionItem {
+  title?: string
+  icon?: string
+  keys?: string[]
+}
 export interface Section1Item {
   title: string
   icon: string

@@ -4,13 +4,15 @@ import ArticleWithIcon from '@components/ArticleWithIcon/index.astro'
 
 type Props = {
   content: SectionItem[]
+  description: string
 }
 
-const { content } = Astro.props
+const { content, description } = Astro.props
 
 ---
 
 <div class="articles-wrapper content-wrapper">
+  <h4>{description}</h4>
   {content.map(item => <ArticleWithIcon content={item} />)}
 </div>
 

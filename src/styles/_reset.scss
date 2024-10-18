@@ -36,6 +36,9 @@
     --grid-max-width: 77.50rem;
     --grid-gutter: var(--space-s-l, clamp( 1.125rem, 0.6467rem + 2.3913vw, 2.5rem) );
     --grid-columns: 12;
+
+    --sans-font : 'Montserrat', sans-serif;
+    --serif-font : 'Playfair Display Variable', serif;
 }
 
 /* makes sizing simpler */
@@ -93,6 +96,7 @@ h4,
 h5,
 h6 {
     text-wrap: balance;
+    font-weight: 700;
 }
 
 /* improve readability with max-width on paragraphs and lists */
@@ -102,7 +106,7 @@ h6 {
 p,
 li {
     max-width: var(--p-max-width, 65ch);
-
+    
     text-wrap: pretty;
 }
 
@@ -115,10 +119,12 @@ p {
 
 h1 {
     font-size: var(--step-5);
+    font-weight: 900;
 }
 
 h2 {
     font-size: var(--step-4);
+    font-weight: 900;
 }
 
 h3 {

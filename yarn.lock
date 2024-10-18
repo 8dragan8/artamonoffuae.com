@@ -951,6 +951,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource-variable/montserrat@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "@fontsource-variable/montserrat@npm:5.1.0"
+  checksum: 10c0/e20b13db39b38b3dd2a9f9df655a750cc244f5b3c831117fc9386ab2b78becd4be4b7b5dd451c4a516af3be17fd44e6019f1f5e2582d98f148081c1d14aff7bb
+  languageName: node
+  linkType: hard
+
+"@fontsource-variable/playfair-display@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "@fontsource-variable/playfair-display@npm:5.1.0"
+  checksum: 10c0/1486163dc365a910aa54d52bdf5618b76f53a665dc1c96e185d3fbb6be9cdb7835c54740f65d5b31fecb1996123a627e2dad0a533a07ade5c26d340190670976
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.0":
   version: 0.19.0
   resolution: "@humanfs/core@npm:0.19.0"
@@ -2484,6 +2498,8 @@ __metadata:
     "@astrojs/check": "npm:^0.9.4"
     "@astrojs/tailwind": "npm:^5.1.2"
     "@astrojs/vercel": "npm:^7.8.2"
+    "@fontsource-variable/montserrat": "npm:^5.1.0"
+    "@fontsource-variable/playfair-display": "npm:^5.1.0"
     "@types/eslint": "npm:^9.6.1"
     astro: "npm:^4.16.6"
     astro-icon: "npm:^1.1.1"
