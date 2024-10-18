@@ -33,14 +33,13 @@ const optimisedHeroImage = await getImage({ src: heroImage, format: 'webp' })
         return (
           <Section>
             <SectionTitle
-              slot={i % 2 !== 0 ? 'right-title' : 'left-title'}
               title={section.title}
               subtitle={section.subtitle}
               imagePath={`${i + 2}.jpg`}
             />
-                { key === 'section1' && <ArticlesLayout content={section.items} />}
-                { key === 'section2' && <NumberedList content={section.items} /> }
-                { [3, 4, 5, 6, 7].filter(x => x === (i + 1)).map(() => <div class="content-wrapper">{key}</div>) }
+            { key === 'section1' && <ArticlesLayout content={section.items} />}
+            { key === 'section2' && <NumberedList content={section.items} /> }
+            { [3, 4, 5, 6, 7].filter(x => x === (i + 1)).map(() => <div class="content-wrapper">{key}</div>) }
           </Section>
         )
       })

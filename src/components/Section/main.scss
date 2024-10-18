@@ -1,12 +1,23 @@
 section {
     position: relative;
 
-    display: grid;
+    display: block;
 
     min-height: 100svh;
 
     // gap: var(--grid-gutter);
+}
 
-    grid-template-columns: [main-start] 2rem [content-start left-content-start] 1fr [left-content-end] 2rem [center-line] 2rem [right-content-start] 1fr [right-content-end content-end] 2rem [main-end];
-    grid-template-rows: [main-start] 2rem [content-start] 1fr [content-end] 2rem [main-end];
+@media screen and (min-width: 600px) {
+    section {
+        display: grid;
+
+        grid-template-rows: [main-start] 2rem [content-start] 1fr [content-end] 2rem [main-end];
+        grid-template-columns: [main-start] 2rem [content-start data-content-start] 1fr [data-content-end] 2rem [center-line title-content-start] 2rem  1fr [ content-end] 2rem [title-content-end main-end];
+        
+        
+        &:nth-child(2n) {
+            grid-template-columns: [main-start title-content-start] 2rem [content-start] 1fr  2rem [center-line title-content-end] 2rem [data-content-start] 1fr [data-content-end content-end] 2rem [main-end];
+        }
+    }
 }

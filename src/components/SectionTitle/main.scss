@@ -1,32 +1,17 @@
 .section-title {
-    position: sticky;
-    top: 0;
-    left: 0;
+    position: relative;
 
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
 
-    height: 100svh;
+    width: 100%;
+    height: auto;
 
-    border: 1px solid black;
-    background: var(--backgroundUrlProp);
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: cover;
-
+    aspect-ratio: 2/1;
     container-name: section-title;
     container-type: normal;
-    grid-row: 1 / span 3;
-
-    &:first-child {
-        grid-column: main-start / center-line;
-    }
-
-    &:last-child {
-        grid-column: center-line / main-end;
-    }
 
     img {
         position: absolute;
@@ -61,5 +46,19 @@
         font-style: italic;
 
         margin-block-start: var(--space-m);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .section-title {
+        position: sticky;
+        top: 0;
+        left: 0;
+
+        height: 100svh;
+
+
+        grid-row: main-start / main-end;
+        grid-column: title-content;
     }
 }
