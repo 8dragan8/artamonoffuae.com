@@ -1,0 +1,14 @@
+.articles-wrapper {
+    position: relative;
+
+    display: grid;
+    align-self: center;
+
+    grid-template-columns: 1fr;
+    column-gap: var(--space-s);
+    row-gap: var(--space-l);
+
+    @media screen and (min-width: 1000px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}

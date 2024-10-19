@@ -1,0 +1,31 @@
+---
+import type { ImageMetadata } from 'astro'
+import { getImage } from 'astro:assets'
+
+type Props = {
+  imagePath: string
+  title: string
+  subtitle: string
+}
+
+const path = '/src/assets/sectionImages/'
+
+const { imagePath, title, subtitle } = Astro.props
+const images = import.meta.glob<{ default: ImageMetadata }>('@assets/sectionImages/*.{jpeg,jpg,png,gif}')
+if (!images[path + imagePath])
+throw new Error(`"${path + imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`)
+
+// eslint-disable-next-line antfu/no-top-level-await
+const optimizedImage = await getImage({ src: images[path + imagePath](), format: 'webp' });
+---
+
+<div class="section-title" style={`--background-url-prop: url(${optimizedImage.src});`}>
+    <div class="section-title-text">
+     {title && <h1>{title}</h1>}
+     {subtitle && <p><q>{subtitle}</q></p>}
+    </div>
+</div>
+
+<style lang="scss">
+    @forward './main.scss';
+  </style>

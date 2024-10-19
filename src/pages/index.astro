@@ -1,15 +1,18 @@
 ---
-import { Image } from 'astro:assets'
-import { Icon } from 'astro-icon/components'
-import backgroundUrl from '../assets/1.jpg'
-import backgroundUrl2 from '../assets/2.jpg'
-import backgroundUrl3 from '../assets/3.jpg'
-import backgroundUrl4 from '../assets/4.jpg'
-import Logo from '../components/logos/Logo.astro'
-import Section from '../components/logos/Section.astro'
-
-
+import heroImage from '@assets/hero.jpg'
+import ArticlesLayout from '@components/ArticlesLayout/index.astro'
+import Hero from '@components/Hero/index.astro'
+import NumberedList from '@components/NumberedList/index.astro'
+import Section from '@components/Section/index.astro'
+import Section3Content from '@components/Section3Content/index.astro'
+import SectionTitle from '@components/SectionTitle/index.astro'
+import { getImage } from 'astro:assets'
 import config from '../content/main.json'
+import '@fontsource-variable/montserrat'
+// Supports weights 400-900
+import '@fontsource-variable/playfair-display'
+// eslint-disable-next-line antfu/no-top-level-await
+const optimisedHeroImage = await getImage({ src: heroImage, format: 'webp' })
 ---
 
 <html lang="en">
@@ -21,98 +24,38 @@ import config from '../content/main.json'
     <title>Astro</title>
   </head>
   <body>
-    <Section class="bg-hero-image" bgimage={backgroundUrl}>
-      <div class="relative gap-3 top-10 grid grid-cols-4 overflow-hidden grid-rows-[1.5rem_4rem_16rem_4rem_1.5rem_1fr] h-[calc(100vh-2.5rem)]">
-        <div class="col-span-4 bg-black/60"></div>
-        <div class="test-grad from-left col-span-2 bg-black/60"></div>
-        <div class="relative col-start-1 col-span-4 bg-black/60 flex justify-center py-4">
-          <Logo />
-        </div>
-        <div class="test-grad from-right col-start-3 col-span-2 bg-black/60"></div>
-        <div class="col-span-4 bg-black/60"></div>
-        <div class="col-span-4 flex justify-center items-end pb-4">
-          <div
-            class="animate-bounce bg-white dark:bg-slate-800 p-2 w-10 h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center"
-          >
-            <svg class="w-6 h-6 text-white" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </Section>
-    <section class="grid grid-cols-2 gap-6 p-12 relative h-full bg-slate-100 place-content-center">
-      <div class="absolute top-0 right-1/2 w-1/2 h-full">
-        <Image src={backgroundUrl2} alt="A description of my image." class="w-full h-full object-cover object-bottom opacity-60 hover:opacity-100 transition-opacity duration-700" />
-      </div>
-      <div class="relative flex flex-col items-center justify-center pointer-events-none">
-        <h1 class="text-6xl font-bold text-center">{config.section1.title}</h1>
-        <p class="max-w-[40ch] italic mt-8  drop-shadow-2xl text-4xl font-thin text-center"><q>{config.section1.subtitle}</q></p>
-      </div>
-
-      <div class="grid grid-cols-2 grid-rows-2 gap-6">
-
-        {config.section1.items.map(item => (
-          <article class="flex flex-col gap-3 items-center">
-            {item.icon && <Icon name={`Icons_${item.icon}`} />}
-            <h2 class="text-2xl font-bold">{item.title}</h2>
-            <p class="text-base text-balance">{item.keys[0]}</p>
-          </article>
-        ))}
-      </div>
+    <section style={`--background-url-prop: url(${optimisedHeroImage.src});`}>
+      <Hero />
     </section>
-    <section class="grid grid-cols-2 gap-6 p-12 relative h-full bg-slate-100 place-content-center">
-      <div class="absolute top-0 left-1/2 w-1/2 h-full">
-        <Image src={backgroundUrl3} alt="A description of my image." class="w-full h-full object-cover object-center opacity-60 hover:opacity-100 transition-opacity duration-700" />
-      </div>
-      <ul style="columns: 2;">
+    {
+      Object.keys(config).map((key, i) => {
+        // @ts-expect-error
+        const section = config[key]
 
-        {config.section2.items.map((item, i) => (
-          <li class="w-11/12 m-6">
-            <h2 class="text-xl font-bold"><span>{i + 1}</span>. {item.title}</h2>
-            <ul class="">
-            {item.keys.map(key => <li class="text-base text-balance list-disc list-outside ml-6">{key}</li>)}
-            </ul>
-          </li>
-        ))}
-      </ul>
-      <div class="relative flex items-center justify-center pointer-events-none">
-        <h1 class="text-6xl font-bold text-center">{config.section2.title}</h1>
-      </div>    </section>
-    <section class="grid grid-cols-2 gap-6 p-12 relative h-full bg-slate-100 place-content-center">
-      <div class="absolute top-0 right-1/2 w-1/2 h-full">
-        <Image src={backgroundUrl4} alt="A description of my image." class="w-full h-full object-cover object-top opacity-60 hover:opacity-100 transition-opacity duration-700" />
-      </div>
-      <div class="relative flex flex-col items-center justify-center pointer-events-none">
-        <h1 class="text-6xl font-bold text-center">{config.section3.subtitle}</h1>
-        <p class="max-w-[40ch] italic mt-8 text-slate-700 mix-blend-multiply drop-shadow-2xl text-4xl font-thin text-center"><q>{config.section3.description}</q></p>
-      </div>
-      <div class="grid grid-cols-2 gap-6 max-h-full">
-        <h1 class="text-4xl col-span-2 mb-12 font-bold text-center">{config.section3.title}</h1>
-
-        {config.section3.items.map(item => (
-          <article class="flex flex-col gap-3 items-center">
-            {item.icon && <Icon name={`Icons_${item.icon}`} />}
-            <ul>
-            {item.keys.map(key => <li class="text-base text-balance list-disc list-outside ml-6">{key}</li>)}
-            </ul>
-          </article>
-        ))}
-      </div>
-    </section>
+        return (
+          <Section>
+            <SectionTitle
+              title={section.title}
+              subtitle={section.subtitle}
+              imagePath={`${i + 2}.jpg`}
+            />
+            { key === 'section1' && <ArticlesLayout content={section.items} />}
+            { key === 'section2' && <NumberedList content={section.items} /> }
+            { key === 'section3' && <Section3Content content={section.items} description={section.description} /> }
+            { key === 'section4' && <NumberedList content={section.items} /> }
+            { key === 'section5' && <Section3Content content={section.items} description={section.description} /> }
+            { [6, 7].filter(x => x === (i + 1)).map(() => <div class="content-wrapper">{key}</div>) }
+          </Section>
+        )
+      })
+    }
   </body>
-  </html>
+</html>
 
 <style lang="scss" is:global>
-  @import '@styles/global.scss';
+  @use '@styles/global.scss';
 </style>
 
 <style lang="scss">
-     [data-icon] {
-      $icon-size: 3.76em;
-      position: relative;
-      width: $icon-size;
-      height: $icon-size;
-      color: red;
-    }
+  @forward '@styles/main.scss';
 </style>

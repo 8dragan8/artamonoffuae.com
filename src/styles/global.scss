@@ -1,41 +1,27 @@
-body,
+@use '@styles/_reset.scss';
+
 html {
-    height: 100%;
+ font-family: var(--sans-font);
 }
 
-.test-grad {
-    background: rgba(0, 0, 0, 0.5);
-    background: linear-gradient(90deg, rgba( 0, 0, 0, 0.6) 0%, rgba( 0, 0, 0, 0.6) calc( 100% / 3 - 1rem) , rgba( 0, 0, 0, 0) calc( 100% / 3 - 1rem) , rgba( 0, 0, 0, 0) calc( 100% / 3 + 1rem) , rgba( 0, 0, 0, 0.6) calc( 100% / 3 + 1rem) , rgba( 0, 0, 0, 0.6) calc( 100% / 3 * 2 - 1rem) , rgba( 0, 0, 0, 0) calc( 100% / 3 * 2 - 1rem) , rgba( 0, 0, 0, 0) calc( 100% / 3 * 2 + 1rem) , rgba( 0, 0, 0, 0.6) calc( 100% / 3 * 2 + 1rem) , rgba( 0, 0, 0, 0.6) 100%);
+.u-container {
+    max-width: var(--grid-max-width);
+
+    padding-inline: var(--grid-gutter);
+    margin-inline: auto;
 }
 
-.from-left {
-    animation: in-fromLeft 0.7s ease-in-out forwards;
+.u-grid {
+    display: grid;
+
+    gap: var(--grid-gutter);
 }
 
-@keyframes in-fromLeft {
-
-from {
-    transform: translateX(-100%) skew( 0);
+.u-grid-columns {
+    grid-template-columns: [main-start] minmax(var( --grid-gutter) , 1fr) [content-start] repeat( var( --grid-columns) , 1fr) [content-end] minmax( var( --grid-gutter) , 1fr) [main-end];
 }
 
-to {
-    transform: translateX(0) skew( -45deg);
-}
-
-}
-
-.from-right {
-    animation: in-from-right 0.7s ease-in-out forwards;
-}
-
-@keyframes in-from-right {
-
-from {
-    transform: translateX(100%) skew( 0);
-}
-
-to {
-    transform: translateX(0) skew( -45deg);
-}
-
+.content-wrapper {
+    grid-row: content-start / content-end;
+    grid-column: data-content;
 }

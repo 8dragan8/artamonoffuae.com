@@ -1,0 +1,25 @@
+---
+import type { Section2Item } from '@content/types'
+
+type Props = {
+  content: Section2Item[]
+}
+
+const { content } = Astro.props
+
+---
+
+  <div class="content-wrapper numbered-list">
+  {content.map((item, i) => (
+    <article class="w-11/12 m-6">
+      <h6><span>{i + 1}</span>. {item.title}</h6>
+      <ul>
+      {item.keys.map(key => <li class="text-base text-balance list-disc list-outside ml-6">{key}</li>)}
+      </ul>
+    </article>
+  ))}
+</div>
+
+<style lang="scss">
+    @forward './main.scss';
+  </style>

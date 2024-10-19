@@ -1,0 +1,22 @@
+---
+import type { SectionItem } from '@content/types'
+import { Icon } from 'astro-icon/components'
+
+type Props = {
+  content: SectionItem
+}
+
+const { content } = Astro.props
+
+---
+
+<article>
+    {content.icon && <Icon name={`Icons_${content.icon}`} />}
+    {content.title && <h5>{content.title}</h5>}
+    {content.keys && content.keys.length === 0 && <p>{content.keys[0]}</p>}
+    {content.keys && content.keys.length > 0 && content.keys.map(key => <p>{key}</p>)}
+</article>
+
+<style lang="scss">
+    @forward './main.scss';
+  </style>

@@ -1,0 +1,25 @@
+---
+import Logo from '@components/logos/Logo.astro'
+// import './main.scss';
+---
+
+<div class="hero-container">
+    <div class="film-strip"></div>
+    <div class="film-strip test-grad from-left top"></div>
+    <div class="film-strip main-line">
+      <Logo />
+    </div>
+    <div class="test-grad from-right film-strip bottom"></div>
+    <div class="film-strip"></div>
+    <div class="down-button ">
+      <div class="animate-bounce">
+        <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+</div>
+
+<style lang="scss">
+    @forward './main.scss';
+</style>

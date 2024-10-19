@@ -1,0 +1,25 @@
+.numbered-list {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-s);
+    grid-auto-flow: dense;
+
+    article {
+        position: relative;
+
+        h6 {
+            margin-block-end: var(--space-s);
+        }
+
+        ul {
+            margin-inline: var(--space-s);
+
+            li {
+                margin-block: var(--space-xs);
+            }
+        }
+    }
+}

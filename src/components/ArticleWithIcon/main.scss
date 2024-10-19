@@ -1,0 +1,20 @@
+article {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    gap: var(--space-m);
+}
+
+[data-icon] {
+    position: relative;
+
+    display: inline;
+
+    width: 3.76em;
+    height: 3.76em;
+
+    text-align: center;
+
+    color: red;
+}
