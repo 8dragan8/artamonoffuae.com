@@ -39,6 +39,8 @@
     --grid-columns: 12;
     --sans-font: 'Montserrat', sans-serif;
     --serif-font: 'Playfair Display Variable', serif;
+
+    --primary-color: 24, 24, 27;
 }
 
 /* makes sizing simpler */
@@ -75,7 +77,6 @@ html {
 body {
     min-height: 100svh;
 
-    color: #18181b;
 }
 
 /* responsive images/videos */
