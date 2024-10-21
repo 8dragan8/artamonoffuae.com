@@ -20,10 +20,10 @@ const optimizedImage = await getImage({ src: images[path + imagePath](), format:
 ---
 
 <div class="section-title" style={`--background-url-prop: url(${optimizedImage.src});`}>
-    <div class="section-title-text">
-     {title && <h1>{title}</h1>}
-     {subtitle && <p><q>{subtitle}</q></p>}
-    </div>
+  <div class="section-title-text">
+    {title && <h1>{title}</h1>}
+    {subtitle && <p><q>{subtitle}</q></p>}
+  </div>
 </div>
 
 <style lang="scss">

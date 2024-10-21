@@ -1,7 +1,7 @@
 @use '@styles/_reset.scss';
 
 html {
- font-family: var(--sans-font);
+    font-family: var(--sans-font);
 }
 
 .u-container {
@@ -22,6 +22,8 @@ html {
 }
 
 .content-wrapper {
+    padding: var(--space-s);
+
     grid-row: content-start / content-end;
     grid-column: data-content;
 }

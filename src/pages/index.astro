@@ -1,6 +1,7 @@
 ---
 import heroImage from '@assets/hero.jpg'
 import ArticlesLayout from '@components/ArticlesLayout/index.astro'
+import Contact from '@components/Contact/index.astro'
 import Hero from '@components/Hero/index.astro'
 import NumberedList from '@components/NumberedList/index.astro'
 import Section from '@components/Section/index.astro'
@@ -44,7 +45,8 @@ const optimisedHeroImage = await getImage({ src: heroImage, format: 'webp' })
             { key === 'section3' && <Section3Content content={section.items} description={section.description} /> }
             { key === 'section4' && <NumberedList content={section.items} /> }
             { key === 'section5' && <Section3Content content={section.items} description={section.description} /> }
-            { [6, 7].filter(x => x === (i + 1)).map(() => <div class="content-wrapper">{key}</div>) }
+            { key === 'contact' && <Contact content={section} /> }
+            { [6].filter(x => x === (i + 1)).map(() => <div class="content-wrapper">{key}</div>) }
           </Section>
         )
       })

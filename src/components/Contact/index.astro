@@ -1,0 +1,24 @@
+---
+import type { Contact } from '@content/types'
+
+type Props = {
+  content: Contact
+}
+
+const { content } = Astro.props
+
+---
+
+<div class="articles-wrapper content-wrapper">
+  <h4>{content.description}</h4>
+  <address>
+    <p>{content.address}</p>
+    <a href={`mailto:${content.email}`}>{content.email}</a>
+    {content.phones.map(phone => <p>{phone.title}: <a href={`tel:${phone.value}`}>{phone.value}</a></p>)}
+    <a href={content.www}>{content.www}</a>
+  </address>
+</div>
+
+<style lang="scss">
+    @forward './main.scss';
+  </style>
