@@ -1,5 +1,6 @@
 ---
 import type { Contact } from '@content/types'
+import Logo from '@components/logos/Logo.astro'
 
 type Props = {
   content: Contact
@@ -10,6 +11,7 @@ const { content } = Astro.props
 ---
 
 <div class="articles-wrapper content-wrapper">
+  <Logo />
   <h4>{content.description}</h4>
   <address>
     <p>{content.address}</p>
