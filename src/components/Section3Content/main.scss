@@ -1,18 +1,16 @@
 .articles-wrapper {
     position: relative;
 
-    display: grid;
-    align-self: center;
-
-    grid-template-columns: 1fr;
-    column-gap: var(--space-s);
-    row-gap: var(--space-l);
-
     h4 {
         text-align: center;
     }
 
-    @media (min-width: 1000px) {
+    @media(min-width: 1000px) {
+        display: grid;
+        align-self: center;
+
+        column-gap: var(--space-s);
+        row-gap: var(--space-l);
         grid-template-columns: repeat(6, auto);
         grid-template-rows: repeat(6, auto);
 
