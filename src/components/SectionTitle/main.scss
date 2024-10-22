@@ -1,18 +1,12 @@
 .section-title {
     position: relative;
 
-    // display: flex;
-    // align-items: center;
-    // flex-direction: column;
-    // justify-content: center;
-
     width: 100%;
 
     background: var(--background-url-prop);
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
-    // padding: clamp(1.25rem, -1.3587rem + 13.0435vw, 8.75rem);
 
     aspect-ratio: 1/1;
     container-name: section-title;
