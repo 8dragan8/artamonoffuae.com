@@ -113,14 +113,14 @@
     "subtitle": "Our team of  experts offers you a comprehensive assistance in establishing and registering a new business entity and much more.",
     "items": [
       {
-        "icon": "Vision",
+        "icon": "Buildings",
         "keys": [
           "Virtual Office",
           "Physical Office"
         ]
       },
       {
-        "icon": "Vision",
+        "icon": "Administration",
         "keys": [
           "Establishment Card",
           "Entry Permit",
@@ -131,7 +131,7 @@
         ]
       },
       {
-        "icon": "Vision",
+        "icon": "Office",
         "keys": [
           "Compliance (UBO & ESR Assessment)",
           "VAT Registration",
@@ -143,7 +143,7 @@
         ]
       },
       {
-        "icon": "Vision",
+        "icon": "Documents",
         "keys": [
           "Partner Visa",
           "New Family Visa",
@@ -154,7 +154,7 @@
         ]
       },
       {
-        "icon": "Vision",
+        "icon": "Tasks",
         "keys": [
           "Renew Trade License",
           "Trade Mark Registration",
@@ -261,6 +261,7 @@
     "title": "Our Industry Experience and Expertise",
     "items": [
       {
+        "icon": "Banking",
         "keys": [
           "Banking & Financial Services",
           "Goverment & Infrastracture",
@@ -269,6 +270,7 @@
         ]
       },
       {
+        "icon": "Events",
         "keys": [
           "Events",
           "Food & Beverage",
@@ -276,6 +278,7 @@
         ]
       },
       {
+        "icon": "Transport",
         "keys": [
           "Shipping & Freight Forwarding",
           "Transport & Logistics",
@@ -283,11 +286,13 @@
         ]
       },
       {
+        "icon": "Sport",
         "keys": [
           "Sport & Activities"
         ]
       },
       {
+        "icon": "NonProfit",
         "keys": [
           "Non For Profit Entities"
         ]
