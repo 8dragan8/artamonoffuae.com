@@ -8,7 +8,7 @@
     column-gap: var(--space-s);
     row-gap: var(--space-l);
 
-    @media screen and (min-width: 1000px) {
+    @media(min-width: 1000px) {
         grid-template-columns: 1fr 1fr;
     }
 }

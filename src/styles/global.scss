@@ -6,26 +6,8 @@ html {
     color: rgb(var( --primary-color) );
 }
 
-.u-container {
-    max-width: var(--grid-max-width);
-
-    padding-inline: var(--grid-gutter);
-    margin-inline: auto;
-}
-
-.u-grid {
-    display: grid;
-
-    gap: var(--grid-gutter);
-}
-
-.u-grid-columns {
-    grid-template-columns: [main-start] minmax(var( --grid-gutter) , 1fr) [content-start] repeat( var( --grid-columns) , 1fr) [content-end] minmax( var( --grid-gutter) , 1fr) [main-end];
-}
-
 .content-wrapper {
     padding: var(--space-s);
-
     grid-row: content-start / content-end;
     grid-column: data-content;
 }

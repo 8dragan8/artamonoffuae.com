@@ -7,18 +7,37 @@ section {
     min-height: 100svh;
 
     // gap: var(--grid-gutter);
+
+    .griffin-logo-bg {
+        position: absolute;
+
+        opacity: 0.15;
+        background-image: var(--background-content-image);
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: auto 100%;
+
+        inset: 0;
+    }
 }
 
-@media screen and (min-width: 600px) {
+@media(min-width: 600px) {
     section {
         display: grid;
 
         grid-template-rows: [main-start] 2rem [content-start] 1fr [content-end] 2rem [main-end];
-        grid-template-columns: [main-start] 2rem [content-start data-content-start] 1fr [data-content-end] 2rem [center-line title-content-start] 2rem  1fr [ content-end] 2rem [title-content-end main-end];
-        
-        
+        grid-template-columns: [main-start bg-image-start] 2rem [content-start data-content-start] 1fr [data-content-end] 2rem [bg-image-end center-line title-content-start] 2rem 1fr [ content-end] 2rem [title-content-end main-end];
+
         &:nth-child(2n) {
-            grid-template-columns: [main-start title-content-start] 2rem [content-start] 1fr  2rem [center-line title-content-end] 2rem [data-content-start] 1fr [data-content-end content-end] 2rem [main-end];
+            grid-template-columns: [main-start title-content-start] 2rem [content-start] 1fr 2rem [bg-image-start center-line title-content-end] 2rem [data-content-start] 1fr [data-content-end content-end] 2rem [bg-image-end main-end];
+        }
+
+        .griffin-logo-bg {
+            position: relative;
+
+            inset: unset;
+            grid-column: bg-image;
+            grid-row: main;
         }
     }
 }
