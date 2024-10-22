@@ -1,0 +1,20 @@
+---
+import type { ContentType } from '@content/types'
+import LogoGoldImage from '@assets/logo-gold.svg'
+import { Image } from 'astro:assets'
+
+type Props = {
+  content: ContentType['thankYou']
+}
+
+const { content } = Astro.props
+---
+<div class="content-wrapper">
+    {content.map(item => <p>{item}</p>)}
+    <Image src={LogoGoldImage} alt="Logo" />
+</div>
+
+
+<style lang="scss">
+  @forward './main.scss';
+</style>
