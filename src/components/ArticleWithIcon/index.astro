@@ -4,13 +4,14 @@ import { Icon } from 'astro-icon/components'
 
 type Props = {
   content: SectionItem
+  class?: string
 }
 
-const { content } = Astro.props
+const { content, class: className } = Astro.props
 
 ---
 
-<article>
+<article class={className}>
     {content.icon && <Icon name={`Icons_${content.icon}`} />}
     {content.title && <h5>{content.title}</h5>}
     {content.keys && content.keys.length === 0 && <p>{content.keys[0]}</p>}

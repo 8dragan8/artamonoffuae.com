@@ -113,14 +113,14 @@
     "subtitle": "Our team of  experts offers you a comprehensive assistance in establishing and registering a new business entity and much more.",
     "items": [
       {
-        "icon": "Buildings",
+        "icon": "Office",
         "keys": [
           "Virtual Office",
           "Physical Office"
         ]
       },
       {
-        "icon": "Administration",
+        "icon": "Buildings",
         "keys": [
           "Establishment Card",
           "Entry Permit",
@@ -131,7 +131,7 @@
         ]
       },
       {
-        "icon": "Office",
+        "icon": "Administration",
         "keys": [
           "Compliance (UBO & ESR Assessment)",
           "VAT Registration",
@@ -258,7 +258,8 @@
     ]
   },
   "section5": {
-    "title": "Our Industry Experience and Expertise",
+    "title": "Experience Expertise",
+    "description": "Our Industry Experience and Expertise",
     "items": [
       {
         "icon": "Banking",

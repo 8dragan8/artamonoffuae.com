@@ -13,7 +13,7 @@ const { content, description } = Astro.props
 
 <div class="articles-wrapper content-wrapper">
   <h4>{description}</h4>
-  {content.map(item => <ArticleWithIcon content={item} />)}
+  {content.map(item => <ArticleWithIcon content={item} class="grid-place" />)}
 </div>
 
 <style lang="scss">
