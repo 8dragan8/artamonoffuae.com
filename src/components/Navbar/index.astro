@@ -12,6 +12,10 @@ const { items } = Astro.props
 ---
 
 <header id="header" class="header">
+  <input id="menu-toggle" type="checkbox" />
+  <label class="menu-button-container" for="menu-toggle">
+    <div class="menu-button"></div>
+  </label>
   <nav class="links" style={`--items: ${items.length + 1};`}>
     <a href=#hero data-section-id=hero>Home</a>
       { items.map(item => (
