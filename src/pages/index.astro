@@ -2,6 +2,7 @@
 import heroImage from '@assets/hero.jpg'
 import ArticlesLayout from '@components/ArticlesLayout/index.astro'
 import Contact from '@components/Contact/index.astro'
+import Faq from '@components/Faq/index.astro'
 import Hero from '@components/Hero/index.astro'
 import Navbar from '@components/Navbar/index.astro'
 import NumberedList from '@components/NumberedList/index.astro'
@@ -59,12 +60,20 @@ const navbarItems = Object.keys(config)
         })
       }
       <Section id="thankYou">
-        <!-- <SectionTitle
+        <SectionTitle
           title={config.thankYou.title}
           subtitle={config.thankYou.content[0]}
           imagePath="9.jpg"
-        /> -->
+        />
           <ThankYou content={config.thankYou} />
+      </Section>
+      <Section id="faq">
+        <SectionTitle
+          title={config.faq.title}
+          subtitle={config.faq.subtitle}
+          imagePath="9.jpg"
+        />
+          <Faq content={config.faq} />
       </Section>
       <Section id="contact">
         <SectionTitle

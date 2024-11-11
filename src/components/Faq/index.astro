@@ -1,0 +1,18 @@
+---
+import type { FAQ } from '@content/types'
+
+type Props = {
+  content: FAQ
+}
+
+const { content } = Astro.props
+---
+<div class="content-wrapper thank-you">
+  <p>{content.description}</p>
+  <p>{content.content}</p>
+</div>
+
+
+<style lang="scss">
+  @forward './main.scss';
+</style>
