@@ -14,7 +14,8 @@
     position: relative;
 
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    flex-flow: row nowrap;
     justify-content: stretch;
 
     width: 100%;
@@ -25,13 +26,21 @@
     --_font-size: var(--header-font-size);
 
     a {
+      display: grid;
+
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      place-items: center;
+      text-align: center;
+
       flex: 1 1 auto;
 
       padding: var(--_padding);
 
-      transition: all .5s;
-      text-align: center;
-      white-space: nowrap;
+      transition: all .3s;
+
+      // white-space: nowrap;
+
       text-decoration: none;
 
       --line-start: 0;
@@ -47,12 +56,10 @@
     .line {
       position: absolute;
       bottom: 0;
-      left:  0;
 
-      width:  0;
       height: 4px;
 
-      transition: left 0.5s linear, width 0.1s 0.5s linear;
+      transition: left 0.3s, right 0.3s 0.1s;
       pointer-events: none;
 
       opacity: 1;

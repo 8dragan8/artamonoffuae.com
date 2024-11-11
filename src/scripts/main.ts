@@ -5,23 +5,40 @@ const array = Array.from({ length: arrayLength })
 
 const sectionsRatios = new Map()
 
-let activeSection = null
+let activeSection: [string, string] | null = null
 
 const line = document.querySelector<HTMLSpanElement>('header > nav > .line')
+const navBar = document.querySelector<HTMLSpanElement>('header > nav')
 
-const lineStops: Record<string, { left: string, width: string }> = {}
+const lineStops: Record<string, { left: number, right: number, top: number, bottom: number }> = {}
 
 function setLineStops() {
   document.querySelectorAll<HTMLAnchorElement>('.links a').forEach((link) => {
     const sectionID = link.dataset.sectionId
     if (sectionID) {
       lineStops[sectionID] = {
-        left: `${link.offsetLeft.toString()}px`,
-        width: `${link.offsetWidth.toString()}px`,
+        left: link.offsetLeft,
+        right: link.offsetLeft + link.offsetWidth,
+        top: link.offsetTop,
+        bottom: link.offsetTop + link.offsetHeight,
       }
     }
   })
-  // console.log('🚀 ~ lineStops:', lineStops)
+
+  document.body.style.setProperty('--navbar-height', `${navBar?.offsetHeight}px`)
+  updateLinePosition()
+  console.log('🚀 ~ lineStops:', lineStops)
+}
+
+function updateLinePosition() {
+  if (activeSection === null)
+    return
+  if (line && lineStops[activeSection[0]]) {
+    line.style.left = `${lineStops[activeSection[0]].left}px`
+    line.style.right = `calc(100% - ${lineStops[activeSection[0]].right}px)`
+    // line.style.bottom = `${lineStops[activeSection[0]].bottom}px`
+    line.style.top = `${lineStops[activeSection[0]].bottom - 4}px`
+  }
 }
 
 setLineStops()
@@ -37,11 +54,8 @@ const observer = new IntersectionObserver(
       // console.log(sectionId, ratio, sectionsRatios)
     })
     activeSection = [...sectionsRatios.entries()].reduce((a, e) => e[1] > a[1] ? e : a)
-    // console.log('🚀 ~ activeSection:', activeSection)
-    if (line && lineStops[activeSection[0]]) {
-      line.style.left = lineStops[activeSection[0]].left
-      line.style.width = lineStops[activeSection[0]].width
-    }
+    console.log('🚀 ~ activeSection:', activeSection)
+    updateLinePosition()
   },
   {
     root: null,
@@ -51,7 +65,9 @@ const observer = new IntersectionObserver(
   },
 )
 
-window.addEventListener('resize', setLineStops)
+// window.addEventListener('resize', setLineStops)
+if (navBar)
+  new ResizeObserver(setLineStops).observe(navBar)
 
 document.querySelectorAll('section > .section-title, .hero-container, .thank-you').forEach((section) => {
   observer.observe(section)

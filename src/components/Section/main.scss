@@ -9,7 +9,7 @@ section {
 
     --_height: var(--section-height-vh, 100vh);
     --_height: var(--section-height, 100svh);
-    scroll-margin-top: calc(var( --header-font-size) + var( --header-item-padding) * 2);
+    scroll-margin-top: var( --navbar-height);
 
     // min-height: 100vh;
     // gap: var(--grid-gutter);
