@@ -3,6 +3,7 @@ import heroImage from '@assets/hero.jpg'
 import ArticlesLayout from '@components/ArticlesLayout/index.astro'
 import Contact from '@components/Contact/index.astro'
 import Hero from '@components/Hero/index.astro'
+import Navbar from '@components/Navbar/index.astro'
 import NumberedList from '@components/NumberedList/index.astro'
 import Section from '@components/Section/index.astro'
 import Section3Content from '@components/Section3Content/index.astro'
@@ -16,6 +17,10 @@ import '@fontsource-variable/playfair-display'
 // eslint-disable-next-line antfu/no-top-level-await
 const optimisedHeroImage = await getImage({ src: heroImage, format: 'webp' })
 
+const navbarItems = Object.keys(config)
+                          // .filter(key => /section\d/.test(key))
+                          .map(key => ({ id: key, title: config[key as 'section1' | 'section2' | 'section3' | 'section4' | 'section5'].title }))
+
 ---
 
 <html lang="en">
@@ -27,43 +32,50 @@ const optimisedHeroImage = await getImage({ src: heroImage, format: 'webp' })
     <title>Astro</title>
   </head>
   <body>
-    <section style={`--background-url-prop: url(${optimisedHeroImage.src});`}>
+    <section id="hero" style={`--background-url-prop: url(${optimisedHeroImage.src});`}>
       <Hero />
     </section>
-    {
-      Object.keys(config).filter(key => /section\d/.test(key)).map((key, i) => {
-        // @ts-expect-error
-        const section = config[key]
+    <main>
+      <Navbar items={navbarItems} />
+      {
+        Object.keys(config).filter(key => /section\d/.test(key)).map((key, i) => {
+          // @ts-expect-error
+          const section = config[key]
 
-        return (
-          <Section>
-            <SectionTitle
-              title={section.title}
-              subtitle={section.subtitle}
-              imagePath={`${i + 2}.jpg`}
-            />
-            { key === 'section1' && <ArticlesLayout content={section.items} />}
-            { key === 'section2' && <NumberedList content={section.items} /> }
-            { key === 'section3' && <Section3Content content={section.items} description={section.description} /> }
-            { key === 'section4' && <NumberedList content={section.items} /> }
-            { key === 'section5' && <Section3Content content={section.items} description={section.description} /> }
-          </Section>
-        )
-      })
-    }
-    <Section>
-        <ThankYou content={config.thankYou} />
-    </Section>
-    <Section>
-      <SectionTitle
-        title={config.contact.title}
-        subtitle={config.contact.subtitle}
-        imagePath="9.jpg"
-      />
-        <Contact content={config.contact} />
-    </Section>
+          return (
+            <Section id={key}>
+              <SectionTitle
+                title={section.title}
+                subtitle={section.subtitle}
+                imagePath={`${i + 2}.jpg`}
+              />
+              { key === 'section1' && <ArticlesLayout content={section.items} />}
+              { key === 'section2' && <NumberedList content={section.items} /> }
+              { key === 'section3' && <Section3Content content={section.items} description={section.description} /> }
+              { key === 'section4' && <NumberedList content={section.items} /> }
+              { key === 'section5' && <Section3Content content={section.items} description={section.description} /> }
+            </Section>
+          )
+        })
+      }
+      <Section id="thankYou">
+          <ThankYou content={config.thankYou} />
+      </Section>
+      <Section id="contact">
+        <SectionTitle
+          title={config.contact.title}
+          subtitle={config.contact.subtitle}
+          imagePath="9.jpg"
+        />
+          <Contact content={config.contact} />
+      </Section>
+    </main>
   </body>
 </html>
+
+<script>
+  import '../scripts/main.ts'
+</script>
 
 <style lang="scss" is:global>
   @use '@styles/global.scss';

@@ -1,16 +1,16 @@
 ---
-import type { ContentType } from '@content/types'
+import type { ThankYou } from '@content/types'
 import LogoGoldImage from '@assets/logo-gold.svg'
 import { Image } from 'astro:assets'
 
 type Props = {
-  content: ContentType['thankYou']
+  content: ThankYou
 }
 
 const { content } = Astro.props
 ---
 <div class="content-wrapper">
-    {content.map(item => <p>{item}</p>)}
+    {content.content.map(item => <p>{item}</p>)}
     <Image src={LogoGoldImage} alt="Logo" />
 </div>
 

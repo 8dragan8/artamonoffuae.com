@@ -2,11 +2,17 @@
 import griffinLogo from '@assets/artamonoff-griffin_griffin_RGB.svg'
 import { getImage } from 'astro:assets'
 
+type Props = {
+  id: string
+}
+
+const { id } = Astro.props
+
  // eslint-disable-next-line antfu/no-top-level-await
  const optimisedGriffinLogo = await getImage({ src: griffinLogo })
 ---
 
-<section>
+<section id={id}>
   <div class="griffin-logo-bg" style={`--background-content-image: url(${optimisedGriffinLogo.src});`} />
 
   <slot name="left-title" />

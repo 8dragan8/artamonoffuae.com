@@ -1,0 +1,29 @@
+---
+
+type Props = {
+  items: {
+    id: string
+    title: string
+  }[]
+}
+
+const { items } = Astro.props
+
+---
+
+<header id="header" class="header">
+  <nav class="links" style={`--items: ${items.length + 1};`}>
+    <a href=#hero data-section-id=home>Home</a>
+      { items.map(item => (
+          <a href={`#${item.id}`} data-section-id={item.id}>{item.title}</a>
+      )) }
+    <span class="line"></span>
+  </nav>
+</header>
+
+<script>
+</script>
+
+<style lang="scss">
+    @forward './main.scss';
+  </style>

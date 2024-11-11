@@ -9,7 +9,6 @@
     --step-3: clamp(1.4238rem, 1.0699rem + 1.7697vw, 2.4414rem);
     --step-4: clamp(1.6018rem, 1.0975rem + 2.5217vw, 3.0518rem);
     --step-5: clamp(1.802rem, 1.102rem + 3.5003vw, 3.8147rem);
-
     --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
     --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
     --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
@@ -39,7 +38,6 @@
     --grid-columns: 12;
     --sans-font: 'Montserrat', sans-serif;
     --serif-font: 'Playfair Display Variable', serif;
-
     --primary-color: 24, 24, 27;
     --brand-color: #c4b05c;
 }
@@ -71,6 +69,7 @@ html {
     color-scheme: dark light;
     color-scheme: light;
     hanging-punctuation: first last;
+    scroll-behavior: smooth;
 }
 
 /* min body height */
@@ -78,7 +77,6 @@ html {
 body {
     min-height: 100vh;
     min-height: 100svh;
-
 }
 
 /* responsive images/videos */
@@ -90,6 +88,11 @@ video {
     display: block;
 
     max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit
 }
 
 /* Improved heading in supported browsers */

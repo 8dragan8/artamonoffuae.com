@@ -3,9 +3,15 @@ section {
 
     display: block;
 
-    min-height: 100vh;
-    min-height: 100svh;
+    // min-height: 100svh;
 
+    min-height: var(--_height);
+
+    --_height: var(--section-height-vh, 100vh);
+    --_height: var(--section-height, 100svh);
+    scroll-margin-top: calc(var( --header-font-size) + var( --header-item-padding) * 2);
+
+    // min-height: 100vh;
     // gap: var(--grid-gutter);
 
     .griffin-logo-bg {

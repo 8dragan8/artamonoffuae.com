@@ -4,7 +4,7 @@ export interface ContentType {
   section3: Section
   section4: Section
   section5: Section
-  thankYou: string[]
+  thankYou: ThankYou
   faq: FAQ
   contact: Contact
 }
@@ -28,6 +28,10 @@ export interface FAQ {
   title: string
   description: string
   content: string
+}
+export interface ThankYou {
+  title: string
+  content: string[]
 }
 
 export interface Section {

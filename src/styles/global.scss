@@ -8,6 +8,7 @@ html {
 
 .content-wrapper {
     padding: var(--space-s);
+
     grid-row: content-start / content-end;
     grid-column: data-content;
 }

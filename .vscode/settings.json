@@ -2,9 +2,9 @@
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
   "editor.formatOnSave": false,
-  "[scss]": {
-    "editor.formatOnSave": true
-  },
+  // "[scss]": {
+  //   "editor.formatOnSave": true
+  // },
 
   // Auto fix
   "editor.codeActionsOnSave": {

@@ -8,3 +8,13 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+main {
+    position: relative;
+
+    --header-font-size: var(--step-0, 1.2rem);
+    --header-item-padding: var(--space-xs, 0.75rem);
+    --header-min-height: var(--header-font-size) + var(--header-item-padding) * 2;
+    --section-height-vh: calc(100vh - var(--header-min-height));
+    --section-height: calc(100svh - var(--header-min-height));
+}

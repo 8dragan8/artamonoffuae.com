@@ -300,14 +300,18 @@
       }
     ]
   },
-  "thankYou": [
-    "At Artamonoff project management company, we acknowledge that the invaluable essence of time - viewing it as the most precious commodity in the world.",
-    "Hence, we genuinely appreciate and honor our clients' time",
-    "Thank you for investing your time to explore our brochure, and we are hopeful that this signifies the intention of a collaborative and mutually beneficial partnership in the near future.",
-    "Once again, we express our gratitude for your time and enthusiastic interest."
-  ],
+  "thankYou": {
+    "title": "Thank You",
+    "content": [
+      "At Artamonoff project management company, we acknowledge that the invaluable essence of time - viewing it as the most precious commodity in the world.",
+      "Hence, we genuinely appreciate and honor our clients' time",
+      "Thank you for investing your time to explore our brochure, and we are hopeful that this signifies the intention of a collaborative and mutually beneficial partnership in the near future.",
+      "Once again, we express our gratitude for your time and enthusiastic interest."
+    ]
+  },
   "faq": {
-    "title": "What Are the Project Management Companies?",
+    "title": "FAQ",
+    "subtitle": "What Are the Project Management Companies?",
     "description": "Project management service companies specialize in providing expertise, resources, and solutions to efficiently plan, execute, and complete projects within specific constraints such as time, budget, and scope. These companies play a crucial role in helping organizations achieve their goals by ensuring that projects are well‑organized, effectively coordinated, and successfully delivered.",
     "content": "These companies can range from small, specialized firms focusing on specific industries or project types to larger, multidisciplinary organizations capable of managing complex, large‑scale projects. They may also offer consulting services, training, and ongoing support to help organizations improve their overall project management capabilities."
   },
