@@ -21,11 +21,10 @@ function setLineStops() {
       }
     }
   })
-  console.log('🚀 ~ lineStops:', lineStops)
+  // console.log('🚀 ~ lineStops:', lineStops)
 }
 
 setLineStops()
-window.addEventListener('resize', setLineStops)
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -52,6 +51,8 @@ const observer = new IntersectionObserver(
   },
 )
 
-document.querySelectorAll('section>.section-title').forEach((section) => {
+window.addEventListener('resize', setLineStops)
+
+document.querySelectorAll('section > .section-title, .hero-container, .thank-you').forEach((section) => {
   observer.observe(section)
 })

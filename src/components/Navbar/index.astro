@@ -13,7 +13,7 @@ const { items } = Astro.props
 
 <header id="header" class="header">
   <nav class="links" style={`--items: ${items.length + 1};`}>
-    <a href=#hero data-section-id=home>Home</a>
+    <a href=#hero data-section-id=hero>Home</a>
       { items.map(item => (
           <a href={`#${item.id}`} data-section-id={item.id}>{item.title}</a>
       )) }

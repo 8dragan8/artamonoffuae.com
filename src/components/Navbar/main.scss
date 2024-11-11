@@ -41,24 +41,18 @@
       &:hover {
         color: #adf;
         background: #ffffff06;
-
-        // & ~ .line {
-        // left:  calc(var(--line-start) - 1px );
-        // width: calc( var(--line-width) - 1px );
-        // opacity: 1;
-        // }
       }
     }
 
     .line {
       position: absolute;
       bottom: 0;
-      left: var(--line-start, 0);
+      left:  0;
 
-      width: var(--line-width, 0);
+      width:  0;
       height: 4px;
 
-      transition: left .5s, width .5s;
+      transition: left 0.5s linear, width 0.1s 0.5s linear;
       pointer-events: none;
 
       opacity: 1;
