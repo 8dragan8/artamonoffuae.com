@@ -5,7 +5,7 @@ section {
 
     // min-height: 100svh;
 
-    min-height: var(--_height);
+    min-height: calc(var(--_height) - var(--navbar-height));
 
     --_height: var(--section-height-vh, 100vh);
     --_height: var(--section-height, 100svh);

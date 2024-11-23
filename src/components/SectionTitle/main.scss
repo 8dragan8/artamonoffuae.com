@@ -57,11 +57,11 @@
 @media(min-width: 600px) {
     .section-title {
         position: sticky;
-        top: 0;
+        top: var(--navbar-height);
         left: 0;
 
-        height: 100vh;
-        height: 100svh;
+        height: calc(100vh - var(--navbar-height));
+        height: calc(100svh - var(--navbar-height));
 
         grid-row: main-start / main-end;
         grid-column: title-content;
