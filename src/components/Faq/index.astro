@@ -1,15 +1,23 @@
 ---
-import type { FAQ } from '@content/types'
+import type { FAQ, ThankYou } from '@content/types'
+import LogoGoldImage from '@assets/logo-gold.svg'
+import { Image } from 'astro:assets'
 
 type Props = {
   content: FAQ
+  content2: ThankYou
 }
 
-const { content } = Astro.props
+const { content, content2 } = Astro.props
 ---
 <div class="content-wrapper thank-you">
+  <h4>{content.subtitle}</h4>
   <p>{content.description}</p>
   <p>{content.content}</p>
+
+  <h4>{content2.title}</h4>
+  {content2.content.map(item => <p>{item}</p>)}
+  <Image src={LogoGoldImage} alt="Logo" />
 </div>
 
 

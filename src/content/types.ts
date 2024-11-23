@@ -26,6 +26,7 @@ export interface Phone {
 
 export interface FAQ {
   title: string
+  subtitle: string
   description: string
   content: string
 }

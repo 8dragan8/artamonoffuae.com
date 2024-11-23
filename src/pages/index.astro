@@ -9,7 +9,7 @@ import NumberedList from '@components/NumberedList/index.astro'
 import Section from '@components/Section/index.astro'
 import Section3Content from '@components/Section3Content/index.astro'
 import SectionTitle from '@components/SectionTitle/index.astro'
-import ThankYou from '@components/ThankYou/index.astro'
+// import ThankYou from '@components/ThankYou/index.astro'
 import { getImage } from 'astro:assets'
 import config from '../content/main.json'
 import '@fontsource-variable/montserrat'
@@ -19,7 +19,7 @@ import '@fontsource-variable/playfair-display'
 const optimisedHeroImage = await getImage({ src: heroImage, format: 'webp' })
 
 const navbarItems = Object.keys(config)
-                          // .filter(key => /section\d/.test(key))
+                          .filter(key => !/thankYou/.test(key))
                           .map(key => ({ id: key, title: config[key as 'section1' | 'section2' | 'section3' | 'section4' | 'section5'].title }))
 
 ---
@@ -59,21 +59,20 @@ const navbarItems = Object.keys(config)
           )
         })
       }
-      <Section id="thankYou">
+      <!-- <Section id="thankYou">
         <SectionTitle
           title={config.thankYou.title}
           subtitle={config.thankYou.content[0]}
           imagePath="9.jpg"
         />
           <ThankYou content={config.thankYou} />
-      </Section>
+      </Section> -->
       <Section id="faq">
         <SectionTitle
           title={config.faq.title}
-          subtitle={config.faq.subtitle}
           imagePath="9.jpg"
         />
-          <Faq content={config.faq} />
+          <Faq content={config.faq} content2={config.thankYou} />
       </Section>
       <Section id="contact">
         <SectionTitle
