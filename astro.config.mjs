@@ -8,4 +8,7 @@ export default defineConfig({
   output: 'static',
   adapter: vercelStatic(),
   integrations: [icon()],
+  devToolbar: {
+    enabled: false,
+  },
 })
