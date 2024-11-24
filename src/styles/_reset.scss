@@ -38,8 +38,20 @@
     --grid-columns: 12;
     --sans-font: 'Montserrat', sans-serif;
     --serif-font: 'Playfair Display Variable', serif;
-    --primary-color: 24, 24, 27;
-    --brand-color: #c4b05c;
+
+    // --clr-primary: 24, 24, 27;
+
+    --clr-primary: oklch(21.03% 0.0059 285.89);
+    --clr-primary-accent: #c4b05c;
+    --clr-primary-accent: oklch(75.68% 0.1073 96.23);
+    --clr-secondary: oklch(87.36% 0.07076937680070264 237.8173130406851);
+    --clr-secondary-accent: oklch(87.36% 0.07076937680070264 237.8173130406851);
+}
+
+@media(color-gamut: p3) {
+    :root {
+        --clr-primary-accent: oklch(75.68% 0.1673 96.23);
+    }
 }
 
 /* makes sizing simpler */
@@ -151,3 +163,42 @@ h5 {
 h6 {
     font-size: var(--step-0);
 }
+
+/* Buttons styles start */
+
+button ,
+button:hover,
+button:focus ,
+button:focus {
+
+    display: grid;
+    flex: 1 1 auto;
+
+    margin: 0;
+    padding: var(--_padding);
+
+    cursor: pointer;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+    text-align: center;
+    text-decoration: none;
+    color: var(--clr-primary-accent);
+    background-color: transparent;
+
+
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    --line-start: 0;
+    --line-width: 300px;
+    --_padding: var(--header-item-padding, 0.75rem);
+    border: none;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+/* Button styles end */

@@ -12,8 +12,18 @@ const navBar = document.querySelector<HTMLSpanElement>('header > nav')
 
 const lineStops: Record<string, { left: number, right: number, top: number, bottom: number }> = {}
 
+document.querySelectorAll<HTMLAnchorElement>('.links button').forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault()
+    const sectionID = link.dataset.sectionId
+    if (sectionID) {
+      document.getElementById(sectionID)?.scrollIntoView()
+    }
+  })
+})
+
 function setLineStops() {
-  document.querySelectorAll<HTMLAnchorElement>('.links a').forEach((link) => {
+  document.querySelectorAll<HTMLAnchorElement>('.links button').forEach((link) => {
     const sectionID = link.dataset.sectionId
     if (sectionID) {
       lineStops[sectionID] = {
@@ -27,7 +37,7 @@ function setLineStops() {
 
   document.body.style.setProperty('--navbar-height', `${navBar?.offsetHeight}px`)
   updateLinePosition()
-  console.log('🚀 ~ lineStops:', lineStops)
+  // console.log('🚀 ~ lineStops:', lineStops)
 }
 
 function updateLinePosition() {
@@ -54,7 +64,7 @@ const observer = new IntersectionObserver(
       // console.log(sectionId, ratio, sectionsRatios)
     })
     activeSection = [...sectionsRatios.entries()].reduce((a, e) => e[1] > a[1] ? e : a)
-    console.log('🚀 ~ activeSection:', activeSection)
+    // console.log('🚀 ~ activeSection:', activeSection)
     updateLinePosition()
   },
   {

@@ -23,7 +23,7 @@
         a {
             text-decoration: none;
 
-            color: rgba(var( --primary-color) , 0.7);
+            color: oklch(from var( --clr-primary) l c h / 0.7);
 
             &:hover {
                 text-decoration: underline;

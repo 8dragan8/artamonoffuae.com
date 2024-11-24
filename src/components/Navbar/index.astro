@@ -17,9 +17,9 @@ const { items } = Astro.props
     <div class="menu-button"></div>
   </label>
   <nav class="links" style={`--items: ${items.length + 1};`}>
-    <a href=#hero data-section-id=hero>Home</a>
+    <button data-section-id=hero>Home</button>
       { items.map(item => (
-          <a href={`#${item.id}`} data-section-id={item.id}>{item.title}</a>
+          <button data-section-id={item.id}>{item.title}</button>
       )) }
     <span class="line"></span>
   </nav>
