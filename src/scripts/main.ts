@@ -7,8 +7,10 @@ const sectionsRatios = new Map()
 
 let activeSection: [string, string] | null = null
 
-const line = document.querySelector<HTMLSpanElement>('header > nav > .line')
-const navBar = document.querySelector<HTMLSpanElement>('header > nav')
+const line = <HTMLSpanElement>document.querySelector('header > nav > .line')
+const header = <HTMLSpanElement>document.querySelector('header')
+const navBar = <HTMLSpanElement>document.querySelector('header > nav')
+const menuToggle = <HTMLInputElement>document.querySelector('#menu-toggle')
 
 const lineStops: Record<string, { left: number, right: number, top: number, bottom: number }> = {}
 
@@ -18,6 +20,7 @@ document.querySelectorAll<HTMLAnchorElement>('.links button').forEach((link) => 
     const sectionID = link.dataset.sectionId
     if (sectionID) {
       document.getElementById(sectionID)?.scrollIntoView()
+      menuToggle.checked = false
     }
   })
 })
@@ -35,7 +38,7 @@ function setLineStops() {
     }
   })
 
-  document.body.style.setProperty('--navbar-height', `${navBar?.offsetHeight}px`)
+  document.body.style.setProperty('--navbar-height', `${header.offsetHeight}px`)
   updateLinePosition()
   // console.log('🚀 ~ lineStops:', lineStops)
 }
