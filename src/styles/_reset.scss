@@ -46,11 +46,14 @@
     --clr-primary-accent: oklch(75.68% 0.1073 96.23);
     --clr-secondary: oklch(87.36% 0.07076937680070264 237.8173130406851);
     --clr-secondary-accent: oklch(87.36% 0.07076937680070264 237.8173130406851);
+    --clr-tertiary-accent: rgb(255, 149, 0);
+    --clr-tertiary-accent: oklch(76.52% 0.1752 62.57);
 }
 
 @media(color-gamut: p3) {
     :root {
         --clr-primary-accent: oklch(75.68% 0.1673 96.23);
+        --clr-tertiary-accent: oklch(76.52% 0.1852 62.57);
     }
 }
 
@@ -166,11 +169,10 @@ h6 {
 
 /* Buttons styles start */
 
-button ,
+button,
 button:hover,
-button:focus ,
+button:focus,
 button:focus {
-
     display: grid;
     flex: 1 1 auto;
 
@@ -181,10 +183,10 @@ button:focus {
     transition: background 250ms ease-in-out, transform 150ms ease;
     text-align: center;
     text-decoration: none;
+
     color: var(--clr-primary-accent);
+    border: none;
     background-color: transparent;
-
-
 
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -194,7 +196,6 @@ button:focus {
     --line-start: 0;
     --line-width: 300px;
     --_padding: var(--header-item-padding, 0.75rem);
-    border: none;
 }
 
 button:active {
