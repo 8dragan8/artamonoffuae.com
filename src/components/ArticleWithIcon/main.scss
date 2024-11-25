@@ -1,10 +1,10 @@
 article {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    display: block;
     text-align: center;
 
-    gap: var(--space-m);
+    & > * {
+        margin-block-start: var(--space-m);
+    }
 
     [data-icon] {
         position: relative;
@@ -27,14 +27,15 @@ article {
     }
 
     @media(min-width: 1000px) {
-
-        
         &.grid-place {
-            align-items: flex-start;
-            
+            text-align: left;
+
             margin-block: 0;
             grid-column: span 3;
-            gap: var(--space-xs);
+            
+            & > * {
+                margin-block-start: var(--space-xs);
+            }
 
             [data-icon] {
                 margin-inline-start: var(--space-l);
