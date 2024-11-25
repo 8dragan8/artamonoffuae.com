@@ -48,8 +48,10 @@
 
     p {
         font-family: var(--serif-font);
-        font-weight: 100;
+        font-weight: 700;
         font-style: italic;
+
+        color: oklch(from var(--clr-primary) l c h);
 
         margin-block-start: var(--space-m);
     }
