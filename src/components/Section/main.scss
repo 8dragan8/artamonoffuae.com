@@ -38,6 +38,8 @@ section {
 
         &:nth-child(2n) {
             grid-template-columns: [main-start title-content-start] 2rem [content-start] 1fr 2rem [bg-image-start center-line title-content-end] 2rem [data-content-start] 1fr [data-content-end content-end] 2rem [bg-image-end main-end];
+        
+
         }
 
         .griffin-logo-bg {

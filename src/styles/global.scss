@@ -3,7 +3,7 @@
 html {
     font-family: var(--sans-font);
 
-    color: var( --clr-primary) ;
+    color: var(--clr-primary);
 }
 
 .content-wrapper {
@@ -11,4 +11,10 @@ html {
 
     grid-row: content-start / content-end;
     grid-column: data-content;
+}
+
+section:nth-child(2n) {
+    .section-title {
+        background-position: center top;
+    }
 }
