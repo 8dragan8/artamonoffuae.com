@@ -16,7 +16,9 @@ article {
 
         text-align: center;
 
-        color: rgb(255, 149, 0);
+        color: var( --clr-tertiary-accent);
+        // color: oklch(76.52% 0.1852 62.57);
+        // color: oklch(76.52% 0.1752 62.57);
 
         margin-inline-start: 0;
     }

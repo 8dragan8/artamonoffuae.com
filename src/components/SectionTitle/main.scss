@@ -43,7 +43,8 @@
 
         inset-inline: clamp(1.375rem, 0.875rem + 2.5vw, 2.8125rem);
         inset-block: clamp(1.375rem, 0.875rem + 2.5vh, 2.8125rem);
-        backdrop-filter: blur(2px);
+        backdrop-filter: blur(2px) saturate(2);
+
     }
 
     p {
@@ -52,8 +53,10 @@
         font-weight: 700;
         font-style: italic;
 
-        color: oklch(from var(--clr-primary) l c h);
-        text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.25);
+        // color: oklch(from var(--clr-primary-accent) l c h);
+        // text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5),
+        // -2px -2px 3px rgba(0, 0, 0, 0.5);
+
 
         margin-block-start: var(--space-m);
     }

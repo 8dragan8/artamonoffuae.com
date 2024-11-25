@@ -1,7 +1,6 @@
 ---
 import type { FAQ, ThankYou } from '@content/types'
-import LogoGoldImage from '@assets/logo-gold.svg'
-import { Image } from 'astro:assets'
+import Logo from '@components/logos/Logo.astro'
 
 type Props = {
   content: FAQ
@@ -17,7 +16,7 @@ const { content, content2 } = Astro.props
 
   <h4>{content2.title}</h4>
   {content2.content.map(item => <p>{item}</p>)}
-  <Image src={LogoGoldImage} alt="Logo" />
+  <Logo />
 </div>
 
 

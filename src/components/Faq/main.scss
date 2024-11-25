@@ -1,11 +1,13 @@
 div {
     text-align: center;
+    position: relative;
+
 
     p {
         margin-block: var(--space-s);
     }
 
-    img {
+    svg {
         display: inline-block;
     }
 }
