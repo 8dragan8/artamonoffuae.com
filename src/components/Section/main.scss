@@ -5,17 +5,19 @@ section {
 
     // min-height: 100svh;
 
-    min-height: calc(var(--_height) - var(--navbar-height));
+    min-height: calc(var( --_height) - var( --navbar-height) );
 
     --_height: var(--section-height-vh, 100vh);
     --_height: var(--section-height, 100svh);
-    scroll-margin-top: var( --navbar-height);
+    scroll-margin-top: var(--navbar-height);
 
     // min-height: 100vh;
     // gap: var(--grid-gutter);
 
     .griffin-logo-bg {
         position: absolute;
+
+        pointer-events: none;
 
         opacity: 0.15;
         background-image: var(--background-content-image);

@@ -4,4 +4,8 @@ div {
     p {
         margin-block: var(--space-s);
     }
+
+    img {
+        display: inline-block;
+    }
 }
