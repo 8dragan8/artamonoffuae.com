@@ -1,4 +1,4 @@
-import QRCodeStyling, { type Options } from 'qr-code-styling'
+import type { Options } from 'qr-code-styling'
 
 const qr_options: Options = {
   type: 'svg',
