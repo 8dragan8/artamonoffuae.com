@@ -9,14 +9,18 @@ import NumberedList from '@components/NumberedList/index.astro'
 import Section from '@components/Section/index.astro'
 import Section3Content from '@components/Section3Content/index.astro'
 import SectionTitle from '@components/SectionTitle/index.astro'
+
+import SiteData from '../content/seo_data.json'
+
 // import ThankYou from '@components/ThankYou/index.astro'
 import { getImage } from 'astro:assets'
+import { SEO } from 'astro-seo'
 import config from '../content/main.json'
 import '@fontsource-variable/montserrat'
 // Supports weights 400-900
 import '@fontsource-variable/playfair-display'
 // eslint-disable-next-line antfu/no-top-level-await
-const optimisedHeroImage = await getImage({ src: heroImage, format: 'webp' })
+const optimizedHeroImage = await getImage({ src: heroImage, format: 'webp' })
 
 const navbarItems = Object.keys(config)
                           .filter(key => !/thankYou/.test(key))
@@ -29,11 +33,36 @@ const navbarItems = Object.keys(config)
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <SEO
+      title={SiteData.default.title}
+      description={SiteData.default.description}
+      openGraph={{
+      basic: {
+        image: optimizedHeroImage.src,
+        title: SiteData.default.openGraph.title,
+        type: SiteData.default.openGraph.type,
+        url: SiteData.default.openGraph.url,
+      },
+      optional: {
+        description: SiteData.default.openGraph.description,
+        siteName: SiteData.default.openGraph.title,
+      },
+    }}
+      twitter={{
+      title: SiteData.default.twitter.title,
+      description: SiteData.default.twitter.description,
+      // creator: SiteData.default.twitter.creator,
+    }}
+    />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Artamonoff" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
-    <section id="hero" style={`--background-url-prop: url(${optimisedHeroImage.src});`}>
+    <section id="hero" style={`--background-url-prop: url(${optimizedHeroImage.src});`}>
       <Hero />
     </section>
     <main>
