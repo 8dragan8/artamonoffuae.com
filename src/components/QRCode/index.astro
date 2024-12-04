@@ -1,46 +1,47 @@
 ---
-
+import qrLogo from '@assets/artamonoff-griffin_griffin_RGB_gold.svg'
 ---
 
-<div id="qr-code"></div>
+<div id="qr-code" data-image-url={qrLogo.src}></div>
 
 <script>
 import QRCodeStyling from 'qr-code-styling'
 import qr_Options from '../../scripts/qr_options.ts'
 
-const {
-  type,
-  shape,
-  width,
-  height,
-  data,
-  margin,
-  qrOptions,
-  cornersDotOptions,
-  cornersSquareOptions,
-  backgroundOptions,
-  imageOptions,
-  dotsOptions,
-} = qr_Options
-
-const qrCode = new QRCodeStyling({
-  width,
-  height,
-  type,
-  data,
-  margin,
-  qrOptions,
-  shape,
-  image: '/favicon.svg',
-  dotsOptions,
-  backgroundOptions,
-  cornersDotOptions,
-  cornersSquareOptions,
-  imageOptions,
-})
-
 const parent = document.getElementById('qr-code')
+
 if (parent) {
+  const qrLogoSrc = parent.dataset.imageUrl
+  const {
+    type,
+    shape,
+    width,
+    height,
+    data,
+    margin,
+    qrOptions,
+    cornersDotOptions,
+    cornersSquareOptions,
+    backgroundOptions,
+    imageOptions,
+    dotsOptions,
+  } = qr_Options
+
+  const qrCode = new QRCodeStyling({
+    width,
+    height,
+    type,
+    data,
+    margin,
+    qrOptions,
+    shape,
+    image: qrLogoSrc,
+    dotsOptions,
+    backgroundOptions,
+    cornersDotOptions,
+    cornersSquareOptions,
+    imageOptions,
+  })
   qrCode.append(parent)
 }
 </script>
