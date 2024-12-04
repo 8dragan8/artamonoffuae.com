@@ -1,6 +1,7 @@
 ---
 import type { Contact } from '@content/types'
 import Logo from '@components/logos/Logo.astro'
+import QRCode from '@components/QRCode/index.astro'
 
 type Props = {
   content: Contact
@@ -21,6 +22,7 @@ const contactUrl = new URL(content.www)
     {content.phones.map(phone => <p>{phone.title}: <a href={`tel:${phone.value}`}>{phone.value}</a></p>)}
     <a href={contactUrl.href}>{contactUrl.hostname}</a>
   </address>
+  <QRCode />
 </div>
 
 <style lang="scss">
