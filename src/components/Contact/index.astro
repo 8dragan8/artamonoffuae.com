@@ -2,6 +2,7 @@
 import type { Contact } from '@content/types'
 import Logo from '@components/logos/Logo.astro'
 import QRCode from '@components/QRCode/index.astro'
+import { Icon } from 'astro-icon/components'
 
 type Props = {
   content: Contact
@@ -17,6 +18,10 @@ const contactUrl = new URL(content.www)
   <Logo />
   <h4>{content.description}</h4>
   <address>
+    <p class="socials">
+      <a target="_blank" href="https://www.instagram.com/artamonoff.uae?igsh=MW04MzUxbDV5cXlmaw=="><Icon name="Icons_Instagram" /></a>
+      <a target="_blank" href="https://www.linkedin.com/company/103199610/admin/feed/posts/"><Icon name="Icons_LinkedIn" /></a>
+    </p>
     <p>{content.address}</p>
     <a href={`mailto:${content.email}`}>{content.email}</a>
     {content.phones.map(phone => <p>{phone.title}: <a href={`tel:${phone.value}`}>{phone.value}</a></p>)}

@@ -2,8 +2,8 @@
     position: relative;
 
     display: grid;
-    justify-items: center;
 
+    justify-items: center;
     grid-template-columns: 1fr;
     column-gap: var(--space-s);
     row-gap: var(--space-l);
@@ -15,10 +15,24 @@
     address {
         display: flex;
         flex-direction: column;
+
         text-align: center;
 
         row-gap: var(--space-2xs);
         justify-self: center;
+
+        .socials {
+            font-size: var(--step-3);
+            line-height: .8;
+
+            [data-icon] {
+                color: var(--clr-primary-accent);
+            }
+
+            * {
+                display: inline;
+            }
+        }
 
         a {
             text-decoration: none;
@@ -31,7 +45,7 @@
         }
     }
 
-    @media screen and (min-width: 1000px) {
+    @media(min-width: 1000px) {
         align-self: center;
     }
 }
