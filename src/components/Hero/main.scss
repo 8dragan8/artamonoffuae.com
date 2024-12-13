@@ -44,6 +44,8 @@
     }
 
     .down-button {
+        align-self: bottom;
+        justify-self: center;
         display: flex;
         align-items: flex-end;
         justify-content: center;
@@ -52,7 +54,7 @@
 
         grid-column: 1 / 5;
 
-        a {
+        button {
             display: flex;
             align-items: center;
             justify-content: center;

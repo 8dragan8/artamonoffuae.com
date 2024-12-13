@@ -14,7 +14,7 @@ const menuToggle = <HTMLInputElement>document.querySelector('#menu-toggle')
 
 const lineStops: Record<string, { left: number, right: number, top: number, bottom: number }> = {}
 
-document.querySelectorAll<HTMLAnchorElement>('.links button').forEach((link) => {
+document.querySelectorAll<HTMLButtonElement>('.links button, .hero-button').forEach((link) => {
   link.addEventListener('click', (e) => {
     e.preventDefault()
     const sectionID = link.dataset.sectionId
