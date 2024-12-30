@@ -15,6 +15,8 @@
     "@astrojs/vercel": "8.0.0",
     "@fontsource-variable/montserrat": "^5.1.0",
     "@fontsource-variable/playfair-display": "^5.1.0",
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
     "astro": "5.0.2",
     "astro-icon": "^1.1.4",
     "astro-seo": "^0.8.4",

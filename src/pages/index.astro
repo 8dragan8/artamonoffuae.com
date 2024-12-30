@@ -9,7 +9,8 @@ import NumberedList from '@components/NumberedList/index.astro'
 import Section3Content from '@components/Section3Content/index.astro'
 import Section from '@components/Section/index.astro'
 import SectionTitle from '@components/SectionTitle/index.astro'
-
+import Analytics from '@vercel/analytics/astro'
+import SpeedInsights from '@vercel/speed-insights/astro'
 import { SEO } from 'astro-seo'
 
 // import ThankYou from '@components/ThankYou/index.astro'
@@ -62,6 +63,8 @@ const navbarItems = Object.keys(config)
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Artamonoff" />
     <link rel="manifest" href="/site.webmanifest" />
+    <Analytics />
+    <SpeedInsights />
   </head>
   <body>
     <section id="hero" style={`--background-url-prop: url(${optimizedHeroImage.src});`}>
